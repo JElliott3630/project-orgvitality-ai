@@ -1,0 +1,90 @@
+import whisper
+import tiktoken
+import json
+import time
+
+VIDEO_PATH = "data/raw/video.mp4"
+OUTPUT_TXT = "data/processed/video_transcript.txt"
+OUTPUT_JSON = "data/processed/video_chunks.json"
+MODEL = "gpt-4o"  # or whatever model you'll embed with
+
+def format_timestamp(seconds):
+    return time.strftime('%M:%S', time.gmtime(seconds))
+
+def chunk_segments(segments, chunk_token_size=400, overlap=75, model=MODEL):
+    enc = tiktoken.encoding_for_model(model)
+    chunks = []
+    buffer = []
+    buffer_tokens = []
+    start_time = None
+    for segment in segments:
+        segment_text = segment["text"]
+        segment_tokens = enc.encode(segment_text)
+        if not buffer:
+            start_time = segment["start"]
+        buffer.append(segment)
+        buffer_tokens.extend(segment_tokens)
+        if len(buffer_tokens) >= chunk_token_size:
+            # Create chunk
+            end_time = buffer[-1]["end"]
+            chunk_text = " ".join(seg["text"] for seg in buffer)
+            chunks.append({
+                "text": chunk_text,
+                "start": start_time,
+                "end": end_time,
+                "segments": buffer.copy()
+            })
+            # Overlap
+            buffer = buffer[-1:] if overlap > 0 else []
+            buffer_tokens = enc.encode(buffer[-1]["text"]) if buffer else []
+            start_time = buffer[0]["start"] if buffer else None
+    # Last chunk
+    if buffer:
+        end_time = buffer[-1]["end"]
+        chunk_text = " ".join(seg["text"] for seg in buffer)
+        chunks.append({
+            "text": chunk_text,
+            "start": start_time,
+            "end": end_time,
+            "segments": buffer.copy()
+        })
+    return chunks
+
+# Load the Whisper model
+model = whisper.load_model("small")  # "small" is a good balance
+
+# Transcribe
+result = model.transcribe(VIDEO_PATH, verbose=True)  # verbose shows progress, optional
+
+# Save raw transcript (optional, for reference)
+with open(OUTPUT_TXT, "w") as f:
+    f.write(result["text"])
+
+# Chunk the transcript (using segments for timestamps)
+chunks = chunk_segments(result["segments"], chunk_token_size=400, overlap=75, model=MODEL)
+
+# Save as JSON, with metadata for perfect citation
+chunk_objs = []
+for i, chunk in enumerate(chunks):
+    start_str = format_timestamp(chunk["start"])
+    end_str = format_timestamp(chunk["end"])
+    chunk_objs.append({
+        "chunk_id": i + 1,
+        "source": "video",
+        "source_detail": f"timestamp {start_str}–{end_str}",
+        "text": chunk["text"],
+        "blocks": [],  # optional, not using blocks for video
+        "metadata": {
+            "start": chunk["start"],
+            "end": chunk["end"],
+            "start_str": start_str,
+            "end_str": end_str,
+            "video_file": VIDEO_PATH
+        }
+    })
+
+with open(OUTPUT_JSON, "w") as f:
+    json.dump(chunk_objs, f, indent=2)
+
+print(f"Transcription complete! Transcript saved to {OUTPUT_TXT}")
+print(f"Chunked output saved to {OUTPUT_JSON} ({len(chunk_objs)} chunks)")

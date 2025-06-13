@@ -1,0 +1,93 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+.pytest_cache/
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+
+# VSCode settings
+.vscode/
+
+# PyCharm
+.idea/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre
+.pyre/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Local data and output files
+data/raw/
+data/processed/
+data/chunks/
+*.pptx
+*.mp4
+*.mkv
+*.avi
+*.mov
+
+# Secrets or credentials (if applicable)
+.env
+.env.*
+
+# ChromaDB (if using local persistence)
+chroma/
+chroma.db
+*.chroma/
+*.chroma
+
+# Output artifacts
+*.json
+*.txt
+*.csv
+*.zip
+
+# FastAPI + Uvicorn generated
+__pycache__/
+*.db
+
+# Ignore submodule state if not used
+.gitmodules
