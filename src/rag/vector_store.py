@@ -2,7 +2,7 @@ import chromadb
 from chromadb.utils import embedding_functions
 import logging
 
-from config import (
+from src.config import (
     CHROMA_DIR,
     COLLECTION_NAME,
     EMBED_MODEL,

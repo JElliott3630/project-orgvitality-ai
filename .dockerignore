@@ -12,7 +12,6 @@ __pycache__/
 
 # Ignore the data directory
 # This is mounted as a volume instead of being built into the image
-data/
 
 # Ignore local development files
 .env

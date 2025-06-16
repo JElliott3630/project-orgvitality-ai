@@ -8,6 +8,11 @@ load_dotenv(override=True)
 # Securely load your OpenAI API key from environment variables
 OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
 
+# Supabase
+SUPABASE_URL = os.getenv("SUPABASE_URL")
+SUPABASE_ANON_KEY = os.getenv("SUPABASE_ANON_KEY")
+
+
 # --- Base Paths ---
 # Define the root directory of the project to build robust file paths
 PROJ_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
