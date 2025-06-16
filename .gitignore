@@ -59,15 +59,7 @@ dmypy.json
 .DS_Store
 Thumbs.db
 
-# Local data and output files
-data/raw/
-data/processed/
-data/chunks/
-*.pptx
-*.mp4
-*.mkv
-*.avi
-*.mov
+
 
 # Secrets or credentials (if applicable)
 .env
@@ -80,7 +72,6 @@ chroma.db
 *.chroma
 
 # Output artifacts
-*.json
 *.txt
 *.csv
 *.zip

@@ -1,0 +1,761 @@
+[
+  {
+    "chunk_id": 1,
+    "source": "pptx",
+    "source_detail": "slide 1",
+    "text": "Reporting Portal User Guide \u2013 Manager User\n\u00a9\ufe0f 2023 by OrgVitality, LLC. All rights reserved under the U.S. laws and international treaties, including the Berne Convention. No part of this work may be reproduced, distributed, republished or used without the expressed written consent of author.",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "Reporting Portal User Guide \u2013 Manager User"
+      },
+      {
+        "type": "image",
+        "file": "data/images/pptx/slide1_img6.png",
+        "ocr_text": "Vitality"
+      },
+      {
+        "type": "text",
+        "content": "\u00a9\ufe0f 2023 by OrgVitality, LLC. All rights reserved under the U.S. laws and international treaties, including the Berne Convention. No part of this work may be reproduced, distributed, republished or used without the expressed written consent of author."
+      }
+    ],
+    "metadata": {
+      "slide_number": 1
+    }
+  },
+  {
+    "chunk_id": 2,
+    "source": "pptx",
+    "source_detail": "slide 2",
+    "text": "Slide 3: Initial Log-in View\nSlide 4: Main Menu\nSlide 5: Overview of Tour\nSlide 6: Overview Results Explorer \u2013 Select Report to View\nSlide 7: Overview Results Explorer \u2013 Overview\nSlide 8: Overview Results Explorer \u2013 Dimensions\nSlide 9: Overview Results Explorer \u2013 Questions\nSlide 10: Overview Results Explorer \u2013 Heatmap\nSlide 11: Overview Results Explorer \u2013 Comments\nSlide 12: Report Library\nSlide 13:Help and Resources\nTable of Contents\n02\n\u00a9\ufe0f 2023 OrgVitality",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "Slide 3: Initial Log-in View\nSlide 4: Main Menu\nSlide 5: Overview of Tour\nSlide 6: Overview Results Explorer \u2013 Select Report to View\nSlide 7: Overview Results Explorer \u2013 Overview\nSlide 8: Overview Results Explorer \u2013 Dimensions\nSlide 9: Overview Results Explorer \u2013 Questions\nSlide 10: Overview Results Explorer \u2013 Heatmap\nSlide 11: Overview Results Explorer \u2013 Comments\nSlide 12: Report Library\nSlide 13:Help and Resources"
+      },
+      {
+        "type": "text",
+        "content": "Table of Contents"
+      },
+      {
+        "type": "text",
+        "content": "02"
+      },
+      {
+        "type": "text",
+        "content": "\u00a9\ufe0f 2023 OrgVitality"
+      }
+    ],
+    "metadata": {
+      "slide_number": 2
+    }
+  },
+  {
+    "chunk_id": 3,
+    "source": "pptx",
+    "source_detail": "slide 3",
+    "text": "Initial log-in view\n03",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "Initial log-in view"
+      },
+      {
+        "type": "image",
+        "file": "data/images/pptx/slide3_img3.png",
+        "ocr_text": "OrgVitality IM Dashboord \u00a7\u2014 Manage Reports ~ Explore Data Groups \u00a5 A Manager Academy \u2014@, Action Planning v @ Help&Guidance FQ Q\n\nOverview Results Explorer\n\nClick the hierarchy icon \u00a5 to select desired group ond choose from optional fites. Each tab (eg. Overview, Dimensions) will show diferent views of results\n\nWelcome OrgVitality Admin!\n\nReport Nome\n\n| Overview Dimensions Questions Heatmap Comment Analysis\n\n\u00a9 57% 70% 62% 60% \u00a9\n\nFavorable Favorable Favorable Favorable\nResponse Count: 2398, Response Count: 2388, Response Count: 2304 Response Count: 2398,\nvvs.Trend: +6 a. vvs.Trend: +7 a. vvs.Trend: +6 a. vs. Trend: +4\nvs. Overall:0 vs. Overall:0 vs. Overall:0 vs. Overall:0\n\n>\n\nWhat goes into my Alignment score of 57%? Who responded? ga\n\nResponse Count\n\nResponse vs\nQuestion epon @roversble \u2014 vetend 91% ue\n\njonagers here agree on our company's priorities Head Count\n1. Managers here ag ipany's priori = QE 8 ) Response Rate _\u2014\n2. Individual performance goals are cleary linked to department performance\n2 Y\n3. The goals of my department are tightly linked with the overall goals of the osos 4 \u00b0 What are the most favorable items?\na eq\n4. My department hos clear performance objectives that ae ted to our 5 C\ntoy Sener es 7304 wa \u00b0 What are the most unfavorable items?"
+      },
+      {
+        "type": "text",
+        "content": "03"
+      }
+    ],
+    "metadata": {
+      "slide_number": 3
+    }
+  },
+  {
+    "chunk_id": 4,
+    "source": "pptx",
+    "source_detail": "slide 4",
+    "text": "Main Menu\nOverview of Results\nDimensions\nQuestions\nHeatmap\nComment Analysis\nDashboard\nReport Library (Pre-Generated Reports)\nManage Reports\n04",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "Main Menu"
+      },
+      {
+        "type": "text",
+        "content": "Overview of Results\nDimensions\nQuestions\nHeatmap\nComment Analysis"
+      },
+      {
+        "type": "text",
+        "content": "Dashboard"
+      },
+      {
+        "type": "text",
+        "content": "Report Library (Pre-Generated Reports)"
+      },
+      {
+        "type": "text",
+        "content": "Manage Reports"
+      },
+      {
+        "type": "text",
+        "content": "04"
+      }
+    ],
+    "metadata": {
+      "slide_number": 4
+    }
+  },
+  {
+    "chunk_id": 5,
+    "source": "pptx",
+    "source_detail": "slide 5",
+    "text": "Overview Tour\nWhen you first log into the portal a pop-up will appear to take a \u201ctour \u201cof the portal. You can exit out of the tour at any point and re-start the tour by clicking the \u2018Start Tour\u2019 button. \n\nOnce the tour has started click \u2018Next\u2019 to progress or \u2018Exit\u2019 to stop the tour.\n05",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "Overview Tour"
+      },
+      {
+        "type": "text",
+        "content": "When you first log into the portal a pop-up will appear to take a \u201ctour \u201cof the portal. You can exit out of the tour at any point and re-start the tour by clicking the \u2018Start Tour\u2019 button. \n\nOnce the tour has started click \u2018Next\u2019 to progress or \u2018Exit\u2019 to stop the tour."
+      },
+      {
+        "type": "image",
+        "file": "data/images/pptx/slide5_img6.png",
+        "ocr_text": "Welcome OrgVitality Admin!"
+      },
+      {
+        "type": "image",
+        "file": "data/images/pptx/slide5_img17.png",
+        "ocr_text": "Commit to Improvement!\n\nListening and responding to employees is not hard, but like any efforts to\nimprove, it does require ongoing attention."
+      },
+      {
+        "type": "image",
+        "file": "data/images/pptx/slide5_img9.png",
+        "ocr_text": "Overview Dimensions Questions Heatmap Comment Analysis\n\n57% 70% 62% 60%\n\nFavorable Favorable Favorable Favorable\nResponse Count: 2398, ssponse Count: 2388, se Count: 2398\nTrend: +6 a. ss. Trend: +7 a. vs. Trend: +4\nvvs. Overall: 0 vs. Overall: 0 vs. Overall: 0\n\nWhat goes into my Alignment score of 57962\n\nResponse Count\n2403\n\nResponse\nestion Favorable\n& Count e\n\nHead Count\n\n1 Managers here agree on\n\n\u2014\u2014 |"
+      },
+      {
+        "type": "image",
+        "file": "data/images/pptx/slide5_img13.png",
+        "ocr_text": "Report Nome\n\n@ Bio otdey\n\nOverview\n\nespn snssgemen\n\no 57%\n\nFavorable\n\nResponse Count: 2398\nvs. Trend: +6 a.\nvs. Overall: 0\n\n= es\n\ntart\n\n70%\n\nFavorable\n\nResponse Count: 2388\n\\vs.Trend: +7 a.\nvs. Overall: 0\n\nQuestions\n\n62%\n\nFavorable\n\nResponse Count: 2394\nvs. Trend: +6 &\nvs. Overall: 0\n\nHeatmap\n\nComment Analysis\n\n60%\n\nFavorable\n\nResponse Count: 2388,\nvs. Trend: +4\nvs. Overall: 0\n\n(o)"
+      },
+      {
+        "type": "text",
+        "content": "05"
+      }
+    ],
+    "metadata": {
+      "slide_number": 5
+    }
+  },
+  {
+    "chunk_id": 6,
+    "source": "pptx",
+    "source_detail": "slide 6",
+    "text": "Dashboard- Select Reports to Review\nClick on the blue dropdown arrow to:\nType name (or partial name) of a report in the search bar* or\nSelect name from the dropdown*\nExpand hierarchically by clicking on the arrow on the left \nSelect manager by clicking on the hamburger icon          on the right in the \u201cview\u201d column\n1\n2\n06\n*Note: You will have access only to your own group and any managers that report to you (if they qualified for a report)",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "Dashboard- Select Reports to Review"
+      },
+      {
+        "type": "text",
+        "content": "Click on the blue dropdown arrow to:\nType name (or partial name) of a report in the search bar* or\nSelect name from the dropdown*\nExpand hierarchically by clicking on the arrow on the left \nSelect manager by clicking on the hamburger icon          on the right in the \u201cview\u201d column"
+      },
+      {
+        "type": "image",
+        "file": "data/images/pptx/slide6_img45.png",
+        "ocr_text": ""
+      },
+      {
+        "type": "image",
+        "file": "data/images/pptx/slide6_img43.png",
+        "ocr_text": ""
+      },
+      {
+        "type": "image",
+        "file": "data/images/pptx/slide6_img35.png",
+        "ocr_text": "Manger Name or Data Group\n\nManager Name\n\u00a5 Jeffrey Saltzman\n\u00a5 Amanda Dundas\n\u00a5 Amanda Wallace\n\u00a5 Amy Ferrero\n\u00a5 David Birittieri\nBrian Rails\nHeather White\nJanet Carson\n\u2018Sharon Conway\n\u2018Sue Marchacos\n\u00bb Denise Hall\nElizabeth Nowicki\n\u00bb Heath Durocher\n\n> Maria Dulce Mello\n\n5484\n\n2266\n\n800\n\n370\n\n73\n\n10\n\n14\n\n2\n\n13\n\n73\n\ncry\n\n95\n\n97\n\nView"
+      },
+      {
+        "type": "image",
+        "file": "data/images/pptx/slide6_img5.png",
+        "ocr_text": "Welcome OrgVitality Admin!\n\n\u00a9 icricidoy"
+      },
+      {
+        "type": "text",
+        "content": "1"
+      },
+      {
+        "type": "text",
+        "content": "2"
+      },
+      {
+        "type": "image",
+        "file": "data/images/pptx/slide6_img22.png",
+        "ocr_text": "Manger Name or Data Group\n\nSearch\n\nRichard Smith"
+      },
+      {
+        "type": "text",
+        "content": "06"
+      },
+      {
+        "type": "text",
+        "content": "*Note: You will have access only to your own group and any managers that report to you (if they qualified for a report)"
+      }
+    ],
+    "metadata": {
+      "slide_number": 6
+    }
+  },
+  {
+    "chunk_id": 7,
+    "source": "pptx",
+    "source_detail": "slide 7",
+    "text": "In this tab you can view a broad overview of results. View dimension scores and their related items, as well as other available analyses like Most Favorable and Most Unfavorable items, Action Priorities, Most Improved and Most Declined items (based on trend). \n\nNote: Click on the top right three vertical dots in any module to download an Excel version or take a screenshot.\nDashboard- Overview\nClick on the \uf0da arrow to see the details for each module.\nOur Action Prioritization algorithm identifies three items that, if acted upon, will have the greatest impact. These items were chosen by analyzing your results and taking organizational strategies into account and focus on issues where you will be able to create real change.\n07",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "In this tab you can view a broad overview of results. View dimension scores and their related items, as well as other available analyses like Most Favorable and Most Unfavorable items, Action Priorities, Most Improved and Most Declined items (based on trend). \n\nNote: Click on the top right three vertical dots in any module to download an Excel version or take a screenshot."
+      },
+      {
+        "type": "text",
+        "content": "Dashboard- Overview"
+      },
+      {
+        "type": "image",
+        "file": "data/images/pptx/slide7_img7.png",
+        "ocr_text": "Overview\n\nsone ae enasasment\n\n\u00a9 57%\n\nDimensions\n\n70%\n\nQuestions\n\n62%\n\nHeatmap\n\nComment Analysis\n\n60%\n\n(o)\n\nFavorable Favorable Favorable Favorable\nResponse Count: 2398 Response Count: 2308 Response Count: 2394 Response Count: 2398\nvs. Trend: +6 & vs. Trend: 7 & vs. Trend: +6 & vs. Trend: +4\nv5. Overall 0 v5. Overall 0 v5. Overall 0 v5. Overall 0\nWhat goes into my Alignment score of 5796? Bs Who responded? \u201c\nResponse Count\nResponse vs.\nQuestion epon @roversble \u2014 vetend 9 1% a\njanagers here agree on our company's priorities. Head Count\n1. Managers here ag ipany's priori = QE 8 ) Response Rate _\u2014\n2 unerimence selected dearer peremonct ag quem isa 5\n3. The goals of my department are tightly linked with the overall goals of the osos 4 \u00b0 What are the most favorable items? a\ncompany. ez\n4. My department has clear performance objectives that are tied to our V\nee eee 2304 \u2018oa \u00b0 What are the most unfavorable items?\n5. Most employees understand what this company\u2019s promise Isto customers. | cos \u00b0\nWhere to act to keep people from leaving? Y\n6 When | work with other departments, our priorities are aligned. ar. | 2 \u00b0\n7. Most employees understand the overall goals of the company and how it \u2014 | cea 5 Where are you on the new company paradignn? .\n\nplans to reach them.\n\nWhere should | take action? Al\n\nWhat comments to read first? Al"
+      },
+      {
+        "type": "text",
+        "content": "Click on the \uf0da arrow to see the details for each module."
+      },
+      {
+        "type": "image",
+        "file": "data/images/pptx/slide7_img36.png",
+        "ocr_text": "WHAT IMPROVED THE MOST?\n\nResponse\n\nWuestion Faverable ve Trend ve, Overall\n\u00b0 count e\n2. \u20142.Inmy work group, we adopt to new information and quickly take action in oder to\n1y work group, pt rey 792 ey 2\n\u2018meet changing business conditions.\n22. 22. My manager holds employees accountable forthe work they do. vos = 2 a\n1.1. The people in my work group cooperate to get the ob done. > ea a"
+      },
+      {
+        "type": "text",
+        "content": "Our Action Prioritization algorithm identifies three items that, if acted upon, will have the greatest impact. These items were chosen by analyzing your results and taking organizational strategies into account and focus on issues where you will be able to create real change."
+      },
+      {
+        "type": "image",
+        "file": "data/images/pptx/slide7_img38.png",
+        "ocr_text": "WHAT DECLINED THE MOST?\n\nResponse\n\nQuestion seers @ Fovorcbie veTrend ve. Overall\n26. 26.1 rust ond have confidence inthe decisions made by the Company XYZ Leadersh\nae Cero 76 ev \u201c2\n16. 16. When business conditions change. Compony XYZ abe to quickly asst\nm -3y 4\n(Pehaviors processes and strotegies) to succeed\n25. 25.1 can see a clear link between my work and Company XYZ's strategy 7s ay 2y"
+      },
+      {
+        "type": "text",
+        "content": "07"
+      }
+    ],
+    "metadata": {
+      "slide_number": 7
+    }
+  },
+  {
+    "chunk_id": 8,
+    "source": "pptx",
+    "source_detail": "slide 8",
+    "text": "Dashboard- Dimensions\nIn this tab you can view all dimension results. \nThis tab shows results for all survey dimensions, and (if available) trends and comparisons. You can sort the results using the up and down arrows at the top of the chart. Use the arrow to the left of each dimension to display its questions.\n\nNote: Click on the top right three vertical dots in any module to download an Excel version or take a screenshot.\nClick on the arrow to view the results for each survey question within each dimension.\n08",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "Dashboard- Dimensions"
+      },
+      {
+        "type": "text",
+        "content": "In this tab you can view all dimension results. \nThis tab shows results for all survey dimensions, and (if available) trends and comparisons. You can sort the results using the up and down arrows at the top of the chart. Use the arrow to the left of each dimension to display its questions.\n\nNote: Click on the top right three vertical dots in any module to download an Excel version or take a screenshot."
+      },
+      {
+        "type": "image",
+        "file": "data/images/pptx/slide8_img5.png",
+        "ocr_text": "Dimension Response Count @Feverabie e| @ Neutrat @ vrrevorabie vs. Trend veOvera! S| vs Benchmark \u00a9"
+      },
+      {
+        "type": "image",
+        "file": "data/images/pptx/slide8_img9.png",
+        "ocr_text": "Alignment\n\n1\n\nManagers here agree on our company\u2019s priorities.\n\nIndividual performance goals are clearly linked to department\nperformance goats.\n\n\u2018The goals of my department are tightly linked with the overall\n\u2018goals ofthe company.\n\nMy department has clear performance objectives that aretied to\ncur customers expectations.\n\nMost employees understand what this company's promise is to\n\n\\When | work with other departments, our priorities are\nclgnes.\n\nMost employes understand the overall gals ofthe company\nCond how it plans to reach them.\n\n2308\n\n2303\n\n2308\n\n2304\n\n2384\n\n2380\n\n2380\n\n2383\n\n104\n\npe\n\nA\n\n+4\n\n8a\n\n94\n\n2\n\n64\n\naay"
+      },
+      {
+        "type": "text",
+        "content": "Click on the arrow to view the results for each survey question within each dimension."
+      },
+      {
+        "type": "text",
+        "content": "08"
+      }
+    ],
+    "metadata": {
+      "slide_number": 8
+    }
+  },
+  {
+    "chunk_id": 9,
+    "source": "pptx",
+    "source_detail": "slide 9",
+    "text": "Dashboard- Questions\nIn this tab you can view all question results. \nThis tab shows results for all the survey questions, and (if available) trends and comparisons. You can sort the results using the up and down arrows at the top of the chart.\n\nNote: Click on the top right three vertical dots in any module to download an Excel version or take a screenshot.\n09",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "Dashboard- Questions"
+      },
+      {
+        "type": "text",
+        "content": "In this tab you can view all question results. \nThis tab shows results for all the survey questions, and (if available) trends and comparisons. You can sort the results using the up and down arrows at the top of the chart.\n\nNote: Click on the top right three vertical dots in any module to download an Excel version or take a screenshot."
+      },
+      {
+        "type": "image",
+        "file": "data/images/pptx/slide9_img5.png",
+        "ocr_text": "a oe\n\nItems \u00a9 | Response Count \u00a9 | @ Fovorabie e| @veurat e| @Urrevorabie \u00a9 | vs Trend vs. Overall vs. Benchmark\nIndividual performance goals are clearly linked to department performance goals. 2398 Sa \u00b0\n\nThe goals of my department are tightly linked with the overall goals of the company. 2394 +4 \u00b0\n\nMy department has clear performance objectives that are tied to our customers\u2019 expectations. 2384 oa \u00b0\n\n\u2018Most employees understand the overall goals of the company and how it plans to reach them. 2383 CO lm ec Elm Oo\u201d Oa \u00b0 \u201c187"
+      },
+      {
+        "type": "text",
+        "content": "09"
+      }
+    ],
+    "metadata": {
+      "slide_number": 9
+    }
+  },
+  {
+    "chunk_id": 10,
+    "source": "pptx",
+    "source_detail": "slide 10",
+    "text": "Dashboard- Heatmap\nIn this tab you can view all dimension & question results. \nThe Heatmap shows the main group and subgroup results side by side. Shading represents meaningful differences OR Strengths & Red Flags. \n\nNote: Click on the top right three vertical dots in any module to download an Excel version or take a screenshot.\nChoose shading preference for the heatmap by clicking the button.\nClick on the arrow to view the results for each survey question within each dimension.\n10",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "Dashboard- Heatmap"
+      },
+      {
+        "type": "text",
+        "content": "In this tab you can view all dimension & question results. \nThe Heatmap shows the main group and subgroup results side by side. Shading represents meaningful differences OR Strengths & Red Flags. \n\nNote: Click on the top right three vertical dots in any module to download an Excel version or take a screenshot."
+      },
+      {
+        "type": "image",
+        "file": "data/images/pptx/slide10_img6.png",
+        "ocr_text": "HEATMAP COMMENT ANALYSIS\n\noverview omensions questions\nShow Sub-groups V, direct Reports oe .\n\u00a9 Necningh Bitereces \u00a9 strengths & Red Fogs\n= Green oredclor coding ndcates \u00ab meoningfl ference ram the primary group \u00a9 a sy ones over cine setnerSinpuen sooerPatl si johnson\n\nResponse Count (2403) 22) (646) (200) (329) (201)\n* Menmes \u201c * - \u201c \u201c | =\n> copabites 70 1 \u00a9 ts 1 1\nSemen @ o e os \u00a9 e\n> Engagement Ps 9 \u00a9 29 es\n> Grow & Devdoprent Ps 9 = 2\n> tmmedioe Manager 7 7 1 74 - 7\n> novation eo 2 e 2 e 7"
+      },
+      {
+        "type": "image",
+        "file": "data/images/pptx/slide10_img4.png",
+        "ocr_text": "\u00a9 MecningtuiDiferences\n\n(\u00a9 Strengths & Red Flags"
+      },
+      {
+        "type": "text",
+        "content": "Choose shading preference for the heatmap by clicking the button."
+      },
+      {
+        "type": "text",
+        "content": "Click on the arrow to view the results for each survey question within each dimension."
+      },
+      {
+        "type": "image",
+        "file": "data/images/pptx/slide10_img9.png",
+        "ocr_text": "Alignment\n\nManagers here agree on our company\n\nIndividual performance goals ae cs\n\nto department\n\nformance goals\n\n\u2018The goals of my department are tightly inked with the overall goals of the company\n\nMy department has clear performa\n\nobjectv\n\nhat are tied to ou\n\nexpectations.\n\n37\n\n56\n\n5\n\n5\n\n60\n\n58\n\n58\n\n58\n\n59\n\n60\n\n58\n\not\n\n57\n\n60\n\n6\n\n58\n\n60\n\nn\n\n78\n\na"
+      },
+      {
+        "type": "text",
+        "content": "10"
+      }
+    ],
+    "metadata": {
+      "slide_number": 10
+    }
+  },
+  {
+    "chunk_id": 11,
+    "source": "pptx",
+    "source_detail": "slide 11",
+    "text": "Dashboard- Comments\nIn this tab you can view all comments and themes. \nThis tab shows responses to the open-ended survey items. Use the dropdown list to select a question. Comments can also be exported to Excel.\n\nNote: Click on the top right three vertical dots in any module to download an Excel version.\nUse the dropdown to view the open-ended questions and responses.\nSearch for comments here.\nFor questions that allowed for self selected themes use the dropdown to filter by theme.\n11",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "Dashboard- Comments"
+      },
+      {
+        "type": "text",
+        "content": "In this tab you can view all comments and themes. \nThis tab shows responses to the open-ended survey items. Use the dropdown list to select a question. Comments can also be exported to Excel.\n\nNote: Click on the top right three vertical dots in any module to download an Excel version."
+      },
+      {
+        "type": "image",
+        "file": "data/images/pptx/slide11_img4.png",
+        "ocr_text": "OVERVIEW DIMENSIONS QUESTIONS HEATMAP COMMEN\n\nComments\n\nBelow are the comments for the selected data group. Please use the drop down above to select the leader you would like to view, and use the filters on the right to make any data cuts. Then use the drop downs below to select which question you would like to view, as\n\nwell as any themes to filter by.\n\nSelect a question\n\n56. Please share one change you think would make us more effective or competitive.\n\nThemes \u00a2 Comments S\n\u2019\nInternal communications Continue to strive for open communication between OTS/SECU on system outages, support, etc. | can see we are moving in this direction so hope to see that it continues.\n\u201cechnoloay/ . Most members are comfortable with the ITM's, but recently there have started to reboot why members are doing transactions. The main concern is that this is happened to several members more than once and\nfechnology/equipment\nsy/egtap the level of us serving is becoming questionable. But | will stay in the last week or so | have not notice the ITM's rebooting in the middle of a transaction.\nI think we are making strides towards aligning our priorities. The one change that will make us more effective and competitive is having more resources to focus on the large number of initiatives that we continue\nAlignment of goals & priorities\nto undertake\ninternal , remind us of SECU's ultimate vision every so often. There are some who feel that things happen and they really don't know why. There also seems that management IS listening to the frontline staff more than\ninternal communications\never versus a high paid consultant from a distant land who may or may not understand our local markets.\nStrategy & direction There needs to be more accountability for the companies we outsource to. Members need to feel that they are speaking to a person that cares about them and their needs.\n\nWe need another FTE. Our team of 3 can no longer sustain working with under these circumstances much longer. We are exhausted and we just keep getting more handed to us. | have to work a part time now\n\nHi h people with the right skill\neying enough people with she right sails as well. While that is not my teams fault, if I was compensated just a bit more, maybe | wouldn't have to do this to myself."
+      },
+      {
+        "type": "text",
+        "content": "Use the dropdown to view the open-ended questions and responses."
+      },
+      {
+        "type": "text",
+        "content": "Search for comments here."
+      },
+      {
+        "type": "text",
+        "content": "For questions that allowed for self selected themes use the dropdown to filter by theme."
+      },
+      {
+        "type": "text",
+        "content": "11"
+      }
+    ],
+    "metadata": {
+      "slide_number": 11
+    }
+  },
+  {
+    "chunk_id": 12,
+    "source": "pptx",
+    "source_detail": "slide 12",
+    "text": "Manage Reports- Report Library\nIn the Report Library you can view all pre-generated reports (based on access permissions), as well as view any custom reports you have generated.\n\nTo send a report to another person via the portal, select the report(s) by checking the box next to the report name(s), then click here to search for and choose the recipient. The recipient must already have access to the portal.\nFilter using the column headers by clicking on the arrows.\nSearch for a report by typing the name in the search field. Partial name searches work best.\nClick to expand the report to view groups included in the report.\nClick to download the PowerPoint Report.\nClick to go to the Dashboard and view results for this report.\nRefresh the Report Library view.\n2\n1\n3\n7\n5\n6\n4\n12",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "Manage Reports- Report Library"
+      },
+      {
+        "type": "text",
+        "content": "In the Report Library you can view all pre-generated reports (based on access permissions), as well as view any custom reports you have generated.\n\nTo send a report to another person via the portal, select the report(s) by checking the box next to the report name(s), then click here to search for and choose the recipient. The recipient must already have access to the portal.\nFilter using the column headers by clicking on the arrows.\nSearch for a report by typing the name in the search field. Partial name searches work best.\nClick to expand the report to view groups included in the report.\nClick to download the PowerPoint Report.\nClick to go to the Dashboard and view results for this report.\nRefresh the Report Library view."
+      },
+      {
+        "type": "image",
+        "file": "data/images/pptx/slide12_img9.png",
+        "ocr_text": "Report Library\n\nBelow are a set of reports available to you, Each row represents a separate report which can be downloaded in the format(s) shown,\n\nReports Create Report\n\nReport Name S| Report Type. S| Status el\n\nAl yal \u2019 e\n\nao\n\n> [1 Bencranston Standard Complete Em\n> OD posepine erly stander compete AR\n\u00bb 1 _ ceorgia Watlace Standard Complete Em\n> 1 arvenere Standard Complete Em\n> O coro stondord complete AR\n> C1 Sherika Seweart Standard Complete Em\n> 11 Bittjonnson Standard Complete Ek m\n> Tsien Yamagich stondord complete AR\nCD reser send comple BAe\nOD oeertivere stondora compete AR\n\n10 \u2019\n\nom @ O80"
+      },
+      {
+        "type": "text",
+        "content": "2"
+      },
+      {
+        "type": "text",
+        "content": "1"
+      },
+      {
+        "type": "text",
+        "content": "3"
+      },
+      {
+        "type": "text",
+        "content": "7"
+      },
+      {
+        "type": "text",
+        "content": "5"
+      },
+      {
+        "type": "text",
+        "content": "6"
+      },
+      {
+        "type": "text",
+        "content": "4"
+      },
+      {
+        "type": "image",
+        "file": "data/images/pptx/slide12_img16.png",
+        "ocr_text": "o\n\nFancy Report\n\nCustom\n\nComplete"
+      },
+      {
+        "type": "text",
+        "content": "12"
+      }
+    ],
+    "metadata": {
+      "slide_number": 12
+    }
+  },
+  {
+    "chunk_id": 13,
+    "source": "pptx",
+    "source_detail": "slide 13",
+    "text": "Help & Guidance: Resources\nView reporting portal guide by clicking the download arrow.\n13",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "Help & Guidance: Resources"
+      },
+      {
+        "type": "text",
+        "content": "View reporting portal guide by clicking the download arrow."
+      },
+      {
+        "type": "image",
+        "file": "data/images/pptx/slide13_img7.png",
+        "ocr_text": "Help & Guidance\n\nResources Add New Resource\nName Topic Added by Date Added Download Delete\nFrequently Asked Questions FAQs OrgVitality Admin Wednesday, 22 September 2021 01:56 AM x 6\nHow to drive action from survey results. Action OrgVitality Admin Wednesday, 22 September 2021 01:55 AM zx ia\n\nle\nai\n\nHow to use the reporting portal Tech Support OrgVitality Admin Wednesday, 22 September 2021 01:54 AM"
+      },
+      {
+        "type": "text",
+        "content": "13"
+      }
+    ],
+    "metadata": {
+      "slide_number": 13
+    }
+  },
+  {
+    "chunk_id": 14,
+    "source": "pptx",
+    "source_detail": "slide 14",
+    "text": "Please find additional pages to substitute in based on client portal specifications\nTool overview Screenshot with the Action Planning Tool listed. \nComments: screenshots without UQ and Sentiment \nAction Planning Tool screenshots\n14\n\u00a9\ufe0f 2023 OrgVitality",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "Please find additional pages to substitute in based on client portal specifications"
+      },
+      {
+        "type": "text",
+        "content": "Tool overview Screenshot with the Action Planning Tool listed. \nComments: screenshots without UQ and Sentiment \nAction Planning Tool screenshots"
+      },
+      {
+        "type": "text",
+        "content": "14"
+      },
+      {
+        "type": "text",
+        "content": "\u00a9\ufe0f 2023 OrgVitality"
+      }
+    ],
+    "metadata": {
+      "slide_number": 14
+    }
+  },
+  {
+    "chunk_id": 15,
+    "source": "pptx",
+    "source_detail": "slide 15",
+    "text": "Main Menu\nOverview of Results\nDimensions, Questions, Heatmap, Comment Analysis\nDashboard\nReport Library (Pre-Generated Reports)\nManage Reports\nCreate and Update Action Plans\nAction Planning Tool\n15",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "Main Menu"
+      },
+      {
+        "type": "text",
+        "content": "Overview of Results\nDimensions, Questions, Heatmap, Comment Analysis"
+      },
+      {
+        "type": "text",
+        "content": "Dashboard"
+      },
+      {
+        "type": "text",
+        "content": "Report Library (Pre-Generated Reports)"
+      },
+      {
+        "type": "text",
+        "content": "Manage Reports"
+      },
+      {
+        "type": "text",
+        "content": "Create and Update Action Plans"
+      },
+      {
+        "type": "text",
+        "content": "Action Planning Tool"
+      },
+      {
+        "type": "text",
+        "content": "15"
+      }
+    ],
+    "metadata": {
+      "slide_number": 15
+    }
+  },
+  {
+    "chunk_id": 16,
+    "source": "pptx",
+    "source_detail": "slide 16",
+    "text": "Dashboard- Comments\nIn this tab you can view all comments, themes, sentiment, and Usability Quotient (UQ). \nThis tab shows responses to the open-ended survey items. Use the dropdown list to select a question. There is also a dropdown to filter by theme, Sentiment, and/or UQ. Comments can also be exported to Excel.\n\nNote: Click on the top right three vertical dots in any module to download an Excel version.\nUse the dropdown to view the open-ended questions and responses.\nView and filter by UQ scores. This is a ranking to determine how actionable a comment is. From highly actionable to somewhat actionable.\nFor questions that allowed for self selected themes use the dropdown to filter by theme.\nView and filter by sentiment.\nSearch for comment\u2019s here.\n16",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "Dashboard- Comments"
+      },
+      {
+        "type": "text",
+        "content": "In this tab you can view all comments, themes, sentiment, and Usability Quotient (UQ). \nThis tab shows responses to the open-ended survey items. Use the dropdown list to select a question. There is also a dropdown to filter by theme, Sentiment, and/or UQ. Comments can also be exported to Excel.\n\nNote: Click on the top right three vertical dots in any module to download an Excel version."
+      },
+      {
+        "type": "image",
+        "file": "data/images/pptx/slide16_img15.png",
+        "ocr_text": "QUESTIONS\n\nMMENT ANALYS!\n\noverview\n\nComments\n\nBelow are the comments forthe selected data group. Please use the drop down in the box abave to select the manager name you would lke to view, and use the demographic ist on the right to narrow tothe group of comments you want to see. Then use sorting and fitering capabilities below to further narrow your view and any exports you make\n\nSelecta question\n\n441 Please share any comments you have about the most postive aspects) of working here fr you personally\n\nUg scores indicate potential action orientation of each comment\n\nModerately Actionable \u2018Somewhat Actionable\n40-79 0-39\nThemes S| Comments S| Sentiment | ue el\n\nLorem ipsum dolr sit amet, consectetur adipiscing elit. Fusce eleifend iaculis orci cursus porttitor. Nullam egestas tellus ex, ac elementum mauris sagittis in. Pron non elementum urna, non eleifend augue. Curabitur\nCustomer Focus /Service condimentum bibendum risus, a valtpat sapien venenatis elementur. Donec tincidunt lorem sed metus fermentum, ve lacnia nisi auctor. Suspendisse consequat venenatis diam suscipt rutrum. Integer molestie tellus eu Positive\nnibh placerat lobortis. Ut mattis imperiet nunc luctus euismod. Etiam gravida, enim quie varus auctor, justo ipsum bibendum nulla. in congue eras nisl vel igula,\n\nLorem ipsum dole sit amet, consectetur adipiscing elit. Fusce eleifend inculis orci cursus porttitor. Nullam egestas tellus ex, ac elementum mauris sagittis in. Proin non elementum urna, non eleifend augue. Curabitur\nBenefits condimentum bibendum risus, 2 volutpat sapien venenatis elementur. Donec tincidunt lorem sed metus fermentum, vel lacnia nisi auctor. Suspendisse consequat venenatis diam suscipit rutrum. Integer molestie tellus eu Positive\nith placerat lobortis. Ut mattis imperdiet nune luctus euismod. Etiam gravida, enim quie varus auctor, justo ipsum bibendum nulla. in congue er nisl vel igula,\n\nLorem ipsum dole sit amet, consectetur adipiscing elit. Fusce eleifend inculis orci cursus porttitor. Nullam egestas tellus ex, ac elementum mauris sagittis in. Pron non elementum urna, non eleifend augue. Curabitur\nother condimentum bibendum risus, a valtpat sapien venenatis elementur. Donec tincidunt lorem sed metus fermentum, ve lacnia nisi auctor. Suspendisse consequat venenatis diam suscipt rutrum. Integer molestie tellus eu Positive\nnibh placerat lobortis. Ut mattis imperiet nunc luctus euismod. Etiam gravida, enim quie varus auctor, justo ipsum bibendum nulla. in congue eras nisl vel igula,"
+      },
+      {
+        "type": "text",
+        "content": "Use the dropdown to view the open-ended questions and responses."
+      },
+      {
+        "type": "text",
+        "content": "View and filter by UQ scores. This is a ranking to determine how actionable a comment is. From highly actionable to somewhat actionable."
+      },
+      {
+        "type": "text",
+        "content": "For questions that allowed for self selected themes use the dropdown to filter by theme."
+      },
+      {
+        "type": "text",
+        "content": "View and filter by sentiment."
+      },
+      {
+        "type": "text",
+        "content": "Search for comment\u2019s here."
+      },
+      {
+        "type": "text",
+        "content": "16"
+      }
+    ],
+    "metadata": {
+      "slide_number": 16
+    }
+  },
+  {
+    "chunk_id": 17,
+    "source": "pptx",
+    "source_detail": "slide 17",
+    "text": "Action Planning- New Action Planning\nCreate Actions for yourself or others based on access. \n\nOption 1: Choose actions from the Suggested Priorities that are pre-populated.\nOption 2: Choose action based on All Survey items. Suggested priority actions will show a star next to them.\nOption 3: (**If present) Choose from company wide Required Items. \n\nOnce you select an item more options will appear underneath. \nA. Action Ideas to choose from/help guide you. If you select one, it will pre-populate in the open text box.\nB. Write in and describe your planned actions or add to the Action Idea.\nC. Create a Target Completion date by using the calendar pop up.\nD. Choose from the Reminder Type options\nE. Choose the action plans Status.\nF. Click \u2018Save and Finish\u2019 or \u2018Save and Add Another\u2019 when done.\nG. You can also use the \u2018Clear Action\u2019 button to start again.\n3\n1\n2\nA\nB\nE\nC\nD\nG\n17\nF",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "Action Planning- New Action Planning"
+      },
+      {
+        "type": "text",
+        "content": "Create Actions for yourself or others based on access. \n\nOption 1: Choose actions from the Suggested Priorities that are pre-populated.\nOption 2: Choose action based on All Survey items. Suggested priority actions will show a star next to them.\nOption 3: (**If present) Choose from company wide Required Items. \n\nOnce you select an item more options will appear underneath. \nA. Action Ideas to choose from/help guide you. If you select one, it will pre-populate in the open text box.\nB. Write in and describe your planned actions or add to the Action Idea.\nC. Create a Target Completion date by using the calendar pop up.\nD. Choose from the Reminder Type options\nE. Choose the action plans Status.\nF. Click \u2018Save and Finish\u2019 or \u2018Save and Add Another\u2019 when done.\nG. You can also use the \u2018Clear Action\u2019 button to start again."
+      },
+      {
+        "type": "image",
+        "file": "data/images/pptx/slide17_img21.png",
+        "ocr_text": "Add Action\n\nBelow are comments fr the selected. Use the drop down menu on the leftto selec the group you'd lke to view (if you have access to multiple groups). Then use the second one onthe right to select the question that you'd lke to view.\n\nHere's How to Start\n\n1. Select an item to focus on. The suggested items are mos kel to drive meaninful improvements.\n\n2. Review the possible action ideas. You can use one or more, edt to ft your needs. or come up with\nsome of your own.\n\n3. Commit to a completion date. Tis tool will help keep you on track\n\n\u2018Start with no more than 1-2 action plans.\n\nChoose from suggest priorities or allitems, and then select on item below to focus on\n\nManaging Actions for\n\n@ ic Hoicoy\n\nOF esis tame Suggest Pres Oy Atene\nDimension tem Summed ott yg Sy\nO Aionnen| 6. wen work with other departments our pris ae ole * wm\nO Aionmen 7-Mott employes understand the overl goat fhe company an how It plan to reach the * oe wk\n\u00a9 Engagement 13. Inmy department you cn fel high energy ond excitement. * 1% a \u00b0"
+      },
+      {
+        "type": "text",
+        "content": "3"
+      },
+      {
+        "type": "text",
+        "content": "1"
+      },
+      {
+        "type": "text",
+        "content": "2"
+      },
+      {
+        "type": "image",
+        "file": "data/images/pptx/slide17_img25.png",
+        "ocr_text": "Describe the specific steps in your action plan or choose froma list of ideas\n\nAction to Addres:\n\nAlignment\n\n7. Most employees understand the overall goals of the company and how it plans to reach them.\n\noe BI VU EZRZE at\n\nTarget Completion None ~~  NotStarted\n\nConsider whether your efforts at recognition are effective. Discuss with your team: What\n\u2018accomplishments does your manager do a good job of recognizing or celebrating within the group?\n\u2018What accomplishments might not get the recognition they should?\n\nImprove contingency planning and crisis response capabiltes by working through simulations,\nrole-playing and scenario planning to make certain the skills and competencies for surprises and\nccises ore but.\n\nClear Action"
+      },
+      {
+        "type": "text",
+        "content": "A"
+      },
+      {
+        "type": "text",
+        "content": "B"
+      },
+      {
+        "type": "text",
+        "content": "E"
+      },
+      {
+        "type": "text",
+        "content": "C"
+      },
+      {
+        "type": "text",
+        "content": "D"
+      },
+      {
+        "type": "text",
+        "content": "G"
+      },
+      {
+        "type": "text",
+        "content": "17"
+      },
+      {
+        "type": "text",
+        "content": "F"
+      }
+    ],
+    "metadata": {
+      "slide_number": 17
+    }
+  },
+  {
+    "chunk_id": 18,
+    "source": "pptx",
+    "source_detail": "slide 18",
+    "text": "Action Planning- Review Action Planning\nReview your action plan or action plans created by someone else, based on access. \n\nUse the tab- Review and Update My Actions. Click on the action boxes to view/update your action plans. \nSave new changes/updates.\nDelete an action plan.\nUse the three vertical dots to \u2018Add Action\u2019 or download actions to excel.\nUse the tab: Review Other Actions to view others\u2019 action plans you have access to.  \nSearch to find the person whose action plan you want to view.\nSort to view action plans based on the different options.  \nUse the View More option to view the full action plan.\nExport others\u2019 action plans to excel.\n1\n4\n2\n3\n5\n9\n7\n6\n8\n18",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "Action Planning- Review Action Planning"
+      },
+      {
+        "type": "text",
+        "content": "Review your action plan or action plans created by someone else, based on access. \n\nUse the tab- Review and Update My Actions. Click on the action boxes to view/update your action plans. \nSave new changes/updates.\nDelete an action plan.\nUse the three vertical dots to \u2018Add Action\u2019 or download actions to excel.\nUse the tab: Review Other Actions to view others\u2019 action plans you have access to.  \nSearch to find the person whose action plan you want to view.\nSort to view action plans based on the different options.  \nUse the View More option to view the full action plan.\nExport others\u2019 action plans to excel."
+      },
+      {
+        "type": "image",
+        "file": "data/images/pptx/slide18_img15.png",
+        "ocr_text": "REVIEW AND UPDATE MY ACTIONS REVIEW OTHER ACTIONS\n\nPriority: Strategy & Direction: Senior Leaders are positioning the company to succeed inthe future [a |\n\nce BI VEZ ZEB aT\n\nConsider whathar your effors at recognition are effective, Discuss with your team: What accomplishments does your manager do a good jeb of recognizing or celebrating within the group? What accomplishments\nmight not get the recognition they should?\n\nImprove contingency planning and crisis response capabilities by working through simulations, role-playing and scenario planning to make certgin the skills and competencies for surprises and crises are built.\n\nReminder Type \u2018Siotas\n\n012022 \u2018One month prior to completion date v InProgress\n\nPriority: Alignment: Most employees understand the overall goals ofthe company and how it plans to reach them,\n\nPriority: Performance Management Theres a clear link between good job performance and compensation in my department, [a |"
+      },
+      {
+        "type": "text",
+        "content": "1"
+      },
+      {
+        "type": "text",
+        "content": "4"
+      },
+      {
+        "type": "text",
+        "content": "2"
+      },
+      {
+        "type": "text",
+        "content": "3"
+      },
+      {
+        "type": "image",
+        "file": "data/images/pptx/slide18_img25.png",
+        "ocr_text": "REVIEW AND UPDATE MY ACTIONS REVIEW OTHER ACTIONS\nManager Name | Priority Item Dimension Action \u2018Target Date status\nAl\n\u201cThere is @ clear link between good job \u2018Lorem ipsum dolor sit amet, consectetur\nAlbina Glick performance and compensation in my Performance Management odipiscing elt. Fusce eleifend iaculis orci cursus 09/01/2022 Not Started\ndepartment porttitor. Nullam egestas te. view more\nIndividual performance goals are clearly linked to Lorem ipsum dolor sitar, consectetur\nAlbina Glick Alignment odipiscing elt Fusce eleifend iaculis orci cursus 09/01/2022 Completed\ndepartment performance goals.\nporttitor. Nullam egestas te. view more\non soaps wan \u2018Lorem ipsum dolor sit amet, consectetur\nAlbina Glick we peaple in my company are chways WilING'D Ee capament odipiscing elt. Fusce eleifend iaculis orci cursus 09/01/2022 Not Started\n\nput in extra effort.\n\n\u2018porttitor. Nullam egestas te... view more"
+      },
+      {
+        "type": "text",
+        "content": "5"
+      },
+      {
+        "type": "text",
+        "content": "9"
+      },
+      {
+        "type": "text",
+        "content": "7"
+      },
+      {
+        "type": "text",
+        "content": "6"
+      },
+      {
+        "type": "text",
+        "content": "8"
+      },
+      {
+        "type": "text",
+        "content": "18"
+      }
+    ],
+    "metadata": {
+      "slide_number": 18
+    }
+  }
+]

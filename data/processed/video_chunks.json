@@ -1,0 +1,408 @@
+[
+  {
+    "chunk_id": 1,
+    "source": "video",
+    "source_detail": "timestamp 00:00\u201300:31",
+    "text": " Welcome to the org vitality reporting portal.  I'm going to walk you through all of the features available for a super user.  First thing to do at the top bar is to select the user you want to view results for.  Here we're looking at Talia Holiday.  If I press the arrow to the right and expand Talia's hierarchy,  here I can see each of the directory ports underneath her.  I can select any of these people by clicking view.",
+    "blocks": [],
+    "metadata": {
+      "start": 0.0,
+      "end": 31.0,
+      "start_str": "00:00",
+      "end_str": "00:31",
+      "video_file": "data/raw/video.mp4"
+    }
+  },
+  {
+    "chunk_id": 2,
+    "source": "video",
+    "source_detail": "timestamp 00:31\u201301:03",
+    "text": " I can also build out the hierarchy by clicking on the arrows under the folks underneath Talia.  I can build out the hierarchy this way,  or I can type in a name at the top to search for the manager I want to view.  If you are a manager, there will just be one name, your name listed that you can view.  If you're a manager of managers, you will have managers underneath you that you can use.  You can select to view any manager that reports to you.  You cannot view results of anyone who is your peer or above you.",
+    "blocks": [],
+    "metadata": {
+      "start": 31.0,
+      "end": 63.0,
+      "start_str": "00:31",
+      "end_str": "01:03",
+      "video_file": "data/raw/video.mp4"
+    }
+  },
+  {
+    "chunk_id": 3,
+    "source": "video",
+    "source_detail": "timestamp 01:03\u201301:40",
+    "text": " Once you select where in the hierarchy you want to look, the dashboard will populate.  If all you want to do is download your PowerPoint report,  you can click download full report and that will download the PowerPoint to your desktop.  If you want to filter by demographics and you have access to them,  you can click demographic filter here.  On the right, that will pop up some different demographic options.  These all come from your HRIS file or feed.  You can do a combination of ands and ors here between the different variables  and as long as the responses meet minimum and the dashboard will populate with those responses.",
+    "blocks": [],
+    "metadata": {
+      "start": 63.0,
+      "end": 100.0,
+      "start_str": "01:03",
+      "end_str": "01:40",
+      "video_file": "data/raw/video.mp4"
+    }
+  },
+  {
+    "chunk_id": 4,
+    "source": "video",
+    "source_detail": "timestamp 01:40\u201302:13",
+    "text": " If by any chance you click a combination that does not meet minimum and the tool that you want to use  will not return any data in order to protect confidentiality.  At this point, you will have selected the data to look at responses for  and the dashboard will populate with the scores.  So scrolling on down, the overview will have a set of data that's going to help you  understand the overall highs and lows, strengths and opportunities and where you might focus.  These boxes across the top are the dimensions on the survey.",
+    "blocks": [],
+    "metadata": {
+      "start": 100.0,
+      "end": 133.0,
+      "start_str": "01:40",
+      "end_str": "02:13",
+      "video_file": "data/raw/video.mp4"
+    }
+  },
+  {
+    "chunk_id": 5,
+    "source": "video",
+    "source_detail": "timestamp 02:13\u201302:43",
+    "text": " You can use the arrow on the right or left to scroll through.  If you click on any one of these dimensions, you'll see the box below will populate with the items in that dimension.  So for example, if I click this box on capabilities, the box below will then show all of the items in the capabilities dimension.  In the dimension box, you'll see the percent favorable as well as response count and any comparisons.  And then in the items box, you'll see each individual item along with the response count percent favorable.",
+    "blocks": [],
+    "metadata": {
+      "start": 133.0,
+      "end": 163.0,
+      "start_str": "02:13",
+      "end_str": "02:43",
+      "video_file": "data/raw/video.mp4"
+    }
+  },
+  {
+    "chunk_id": 6,
+    "source": "video",
+    "source_detail": "timestamp 02:43\u201303:16",
+    "text": " If you hover over that percent favorable, you'll also see the number of responses that were favorable as well as comparisons.  Comparisons might be versus trend versus overall or depending on your company, it might be versus business unit or something like that.  You'll notice some of the scores show comparison.  You'll notice some of the scores show comparisons in black text and some are in green or red.  If a difference is not statistically significant, it will be in black text with no arrows.",
+    "blocks": [],
+    "metadata": {
+      "start": 163.0,
+      "end": 196.0,
+      "start_str": "02:43",
+      "end_str": "03:16",
+      "video_file": "data/raw/video.mp4"
+    }
+  },
+  {
+    "chunk_id": 7,
+    "source": "video",
+    "source_detail": "timestamp 03:16\u201303:46",
+    "text": " If it is a statistically significant increase, it will be in green with an up arrow.  If it's a statistically significant decrease, it will be in red with a down arrow.  What's statistically significant that depends on the size of both groups.  If you have more than 100 folks in both groups, you need five points or more difference for it to be statistically significant.  If you have 50 to 99, it needs to be 10 points.  And if it is less than 50 folks, then it needs to be 15 points.",
+    "blocks": [],
+    "metadata": {
+      "start": 196.0,
+      "end": 226.0,
+      "start_str": "03:16",
+      "end_str": "03:46",
+      "video_file": "data/raw/video.mp4"
+    }
+  },
+  {
+    "chunk_id": 8,
+    "source": "video",
+    "source_detail": "timestamp 03:46\u201304:20",
+    "text": " And that's just because as those groups get smaller, each employee can move the score around a little bit more.  On the right side of the screen, under who responded, you'll see your response rate.  So you'll see the response rate as well as the response count and headcount.  What's a good response rate? Typically over 75% is a good response rate.  At that response rate, we say that that's statistically representative of all the folks in your organization.  And most folks will be able to get a report and meet minimum end.",
+    "blocks": [],
+    "metadata": {
+      "start": 226.0,
+      "end": 260.0,
+      "start_str": "03:46",
+      "end_str": "04:20",
+      "video_file": "data/raw/video.mp4"
+    }
+  },
+  {
+    "chunk_id": 9,
+    "source": "video",
+    "source_detail": "timestamp 04:20\u201304:53",
+    "text": " Underneath that, I can start to build out some of these modules.  You'll see things like most favorable items.  You might see the percent favorable or percent favorable neutral and unfavorable.  These can help you look at your overall strengths and then here are the most unfavorable items.  That's going to be an opportunity.  Anywhere where you see these three dots in the top right corner, if you click those, you can either download an Excel report of the data or you can take a screenshot of the data to use the graphs.  I find this really useful when I'm creating leader presentations.",
+    "blocks": [],
+    "metadata": {
+      "start": 260.0,
+      "end": 293.0,
+      "start_str": "04:20",
+      "end_str": "04:53",
+      "video_file": "data/raw/video.mp4"
+    }
+  },
+  {
+    "chunk_id": 10,
+    "source": "video",
+    "source_detail": "timestamp 04:53\u201305:23",
+    "text": " If you keep scrolling down, what improved the most?  This will be where you have the most improvements on your data if you have a trend and what declined the most.  Same thing. In this example here, it shows insufficient data because there weren't items that declined.  So if that appears in your data, that's just because there weren't relevant items to share.  So this site has shown you overall strengths and opportunities in terms of what's high, low, what's improved in decline.  On the left side, if we start to build out this module, where should I take action?",
+    "blocks": [],
+    "metadata": {
+      "start": 293.0,
+      "end": 323.0,
+      "start_str": "04:53",
+      "end_str": "05:23",
+      "video_file": "data/raw/video.mp4"
+    }
+  },
+  {
+    "chunk_id": 11,
+    "source": "video",
+    "source_detail": "timestamp 05:23\u201305:55",
+    "text": " That's going to help you decide where you might focus your improvement efforts.  So here are three items that are specific to you.  These three items are determined by our algorithm, not just what's higher or low, but what is strategically important and what can you have most impact on.  So for me, based on my results, these are the three items that the algorithm is suggesting.  If I hit start action plan, that'll take us to our action tool.",
+    "blocks": [],
+    "metadata": {
+      "start": 323.0,
+      "end": 355.0,
+      "start_str": "05:23",
+      "end_str": "05:55",
+      "video_file": "data/raw/video.mp4"
+    }
+  },
+  {
+    "chunk_id": 12,
+    "source": "video",
+    "source_detail": "timestamp 05:55\u201306:28",
+    "text": " Here I can look at any of the three items and I could also move over to all items if I wanted to work on something else.  But let's say I want to work on this top item here.  If I select it and scroll down, then I'll have some sample action ideas.  If I click a sample action idea, it'll appear in the actions to address, and then I can continue to edit or write a new action plan for how I'm going to address this item.  Underneath that box, I can give it a target completion date.",
+    "blocks": [],
+    "metadata": {
+      "start": 355.0,
+      "end": 388.0,
+      "start_str": "05:55",
+      "end_str": "06:28",
+      "video_file": "data/raw/video.mp4"
+    }
+  },
+  {
+    "chunk_id": 13,
+    "source": "video",
+    "source_detail": "timestamp 06:28\u201307:07",
+    "text": " Make sure you give yourself enough time.  I can set reminders for myself in the tool and set a status, and then I'll hit save and finish.  Here I can review and update any of my actions.  If I wanted to go back in and edit the action once I've been working on it or set some new reminders, I can do that.  And if I'm a manager of managers, I could review other actions.  Here's where I could see any of the actions that folks reporting to me are taking.  You'll see in this table, I can sort by the manager name who's working on the action, the item they're working on, or the action themselves, as well as the target date and status.",
+    "blocks": [],
+    "metadata": {
+      "start": 388.0,
+      "end": 427.0,
+      "start_str": "06:28",
+      "end_str": "07:07",
+      "video_file": "data/raw/video.mp4"
+    }
+  },
+  {
+    "chunk_id": 14,
+    "source": "video",
+    "source_detail": "timestamp 07:07\u201307:42",
+    "text": " Again, you'll see these three dots at the top right.  I can export this to Excel.  I'm going to head back to the dashboard.  Two more things here on the dashboard.  One is the drivers of engagement.  You'll notice these questions are predictive of what makes an employee engaged in your organization.  So these items are the same drivers for everyone in the organization, but they are specific to your organization.  And these are your scores showing here.  So if you want to improve engagement, these are some actionable items to work on.",
+    "blocks": [],
+    "metadata": {
+      "start": 427.0,
+      "end": 462.0,
+      "start_str": "07:07",
+      "end_str": "07:42",
+      "video_file": "data/raw/video.mp4"
+    }
+  },
+  {
+    "chunk_id": 15,
+    "source": "video",
+    "source_detail": "timestamp 07:42\u201308:12",
+    "text": " And then on the left side, which comments to read, this is where I can select which open-ended comments I want to view and click Read the Highlights in order to get the most actionable comments.  So that's the dashboard to give you an overall sense of how you're doing.  To dig in a little further, you might then click on dimensions.  So remember, dimensions are going to be an average score.  So if I was to look at the alignment dimension, that would be the average of all of the questions about alignment.",
+    "blocks": [],
+    "metadata": {
+      "start": 462.0,
+      "end": 492.0,
+      "start_str": "07:42",
+      "end_str": "08:12",
+      "video_file": "data/raw/video.mp4"
+    }
+  },
+  {
+    "chunk_id": 16,
+    "source": "video",
+    "source_detail": "timestamp 08:12\u201308:43",
+    "text": " So if I click on the down arrow next to alignment, I can see each of the questions in the alignment dimension.  So I can see how that overall average score for alignment comes together.  I can sort by percent favorable, neutral, unfavorable, response count.  You'll see I have trend versus overall and versus benchmark.  All of these are sortable and filterable.  And if I move over to the questions tab, I can do the same thing.  So I can view any of the questions from the survey.  I can sort up and down based on score as well as comparisons.",
+    "blocks": [],
+    "metadata": {
+      "start": 492.0,
+      "end": 523.0,
+      "start_str": "08:12",
+      "end_str": "08:43",
+      "video_file": "data/raw/video.mp4"
+    }
+  },
+  {
+    "chunk_id": 17,
+    "source": "video",
+    "source_detail": "timestamp 08:43\u201309:17",
+    "text": " Some folks might ask, what's a good score?  Generally, a score of 75% favorable or higher is a strength and a score of 50% favorable or lower is an opportunity.  Now that will, of course, depend on your organization as well as the topic.  Be sure to also focus on what's most important.  Something like 50% favorable on safety is much different than 50% favorable on communication.  Make sure to focus on the things that are really critical for your business.  Moving on from the questions to the heat map, here's one way that you can slice and dice a lot of the data.",
+    "blocks": [],
+    "metadata": {
+      "start": 523.0,
+      "end": 557.0,
+      "start_str": "08:43",
+      "end_str": "09:17",
+      "video_file": "data/raw/video.mp4"
+    }
+  },
+  {
+    "chunk_id": 18,
+    "source": "video",
+    "source_detail": "timestamp 09:17\u201309:48",
+    "text": " So it will default to a hierarchy view.  So here on the left, we'll see the organization overall and then each of the CEO's direct reports.  You'll see that the scores are color coded.  Green scores are strengths and those that are in red are opportunities.  We can also put it on meaningful differences and where a score is meaningfully different than the overall.  The arrows note where there is significant trend.  I can also expand any of these dimensions to see the questions within.",
+    "blocks": [],
+    "metadata": {
+      "start": 557.0,
+      "end": 588.0,
+      "start_str": "09:17",
+      "end_str": "09:48",
+      "video_file": "data/raw/video.mp4"
+    }
+  },
+  {
+    "chunk_id": 19,
+    "source": "video",
+    "source_detail": "timestamp 09:48\u201310:19",
+    "text": " If I want to go beyond the hierarchy view and look at some demographics, I can click on the demographic dropdown.  For example, click gender and it will cut my data by gender and I can compare here.  Again, these three dots at the top right will allow me to download an Excel report or take a screenshot of the data.  So these are different ways to view the data as it is.  We can also look at different ways to create custom reports.",
+    "blocks": [],
+    "metadata": {
+      "start": 588.0,
+      "end": 619.0,
+      "start_str": "09:48",
+      "end_str": "10:19",
+      "video_file": "data/raw/video.mp4"
+    }
+  },
+  {
+    "chunk_id": 20,
+    "source": "video",
+    "source_detail": "timestamp 10:19\u201310:50",
+    "text": " Before that, we'll go to the report library to see where existing reports are.  So at the very top of the screen, we'll go to manage reports report library and here's where you can see the repository of reports that already exist.  So if there is a particular leader report you're looking for, you can search for the name and then download the PowerPoint report by clicking the PowerPoint icon or you can click on the dashboard icon to view the data on the dashboard.",
+    "blocks": [],
+    "metadata": {
+      "start": 619.0,
+      "end": 650.0,
+      "start_str": "10:19",
+      "end_str": "10:50",
+      "video_file": "data/raw/video.mp4"
+    }
+  },
+  {
+    "chunk_id": 21,
+    "source": "video",
+    "source_detail": "timestamp 10:50\u201311:21",
+    "text": " If you'd like to create a custom report, we'll start by creating a custom data group. So we'll go to explore data groups, create custom data group, and here you can create a report with any combination of includes or excludes using hierarchy, demographics, or survey items.  I'll start by using Talia as our included manager. So I'll click on her name, drag it over to included managers. I can select normal rollup, directs only rollup including manager or individual.",
+    "blocks": [],
+    "metadata": {
+      "start": 650.0,
+      "end": 681.0,
+      "start_str": "10:50",
+      "end_str": "11:21",
+      "video_file": "data/raw/video.mp4"
+    }
+  },
+  {
+    "chunk_id": 22,
+    "source": "video",
+    "source_detail": "timestamp 11:21\u201311:54",
+    "text": " Make sure that any combination you use will meet minimum end.  And let's say I want to exclude Andy's group because they operate a little differently. I'll drag his name over to exclude.  You'll see a total response counter at the top right to make sure that the group you're building is as intended.  Then I'm going to come over to the left and hit demographics and let's say I wanted to slice by high potential. I'll build out high potential and drag over the group that says ready into included demographics.",
+    "blocks": [],
+    "metadata": {
+      "start": 681.0,
+      "end": 714.0,
+      "start_str": "11:21",
+      "end_str": "11:54",
+      "video_file": "data/raw/video.mp4"
+    }
+  },
+  {
+    "chunk_id": 23,
+    "source": "video",
+    "source_detail": "timestamp 11:54\u201312:30",
+    "text": " I'll give this group a name at the top in the search bar. I'm going to type in their name. So this is Talia minus Andy high potential.  I'll hit save and that's going to take me to my data group library. Here I'll see all of the data groups that already exist. Those would be the standard data groups that I can sort by type and then the custom data groups that I've built here.  Once I'm here in the custom data group library, I can select any number of data groups and by using the boxes on the far left.",
+    "blocks": [],
+    "metadata": {
+      "start": 714.0,
+      "end": 750.0,
+      "start_str": "11:54",
+      "end_str": "12:30",
+      "video_file": "data/raw/video.mp4"
+    }
+  },
+  {
+    "chunk_id": 24,
+    "source": "video",
+    "source_detail": "timestamp 12:30\u201313:04",
+    "text": " And then I can click this blue button at the top and I can export them to Excel. I can share them with other group other users in the tool or I can create a report.  I'm going to click create report. It will take me to this screen here. It will show the data groups. I've already selected on the right and if it will show all available data groups on the left.  If there are other data groups I want to include in my report, I can click and drag them over to the right.  I need to select a data group as my primary data group by checking the box under primary. Then I give the data group a name.",
+    "blocks": [],
+    "metadata": {
+      "start": 750.0,
+      "end": 784.0,
+      "start_str": "12:30",
+      "end_str": "13:04",
+      "video_file": "data/raw/video.mp4"
+    }
+  },
+  {
+    "chunk_id": 25,
+    "source": "video",
+    "source_detail": "timestamp 13:04\u201313:39",
+    "text": " Hit save and it will take me back to my data group or to my report library where all of my reports are. You'll see I can sort by customer standard reports and similar to the data group library.  If I select any reports on the left, I can either download them or I can share them with other users in the tool.  Now that we've talked about creating different reports, let's look at different ways to support action.  So if I click action planning at the top right, there are a few different things I can do. The first thing is new action planning.",
+    "blocks": [],
+    "metadata": {
+      "start": 784.0,
+      "end": 819.0,
+      "start_str": "13:04",
+      "end_str": "13:39",
+      "video_file": "data/raw/video.mp4"
+    }
+  },
+  {
+    "chunk_id": 26,
+    "source": "video",
+    "source_detail": "timestamp 13:39\u201314:12",
+    "text": " We saw this screen a little bit earlier, how you can log in action for yourself. If you are a manager of others or a HR leader, you can also log in action for someone else.  So here it says managing actions for. You can click this down arrow and you can click another user to log in action for if that's something you'd like to do.  Another thing you can do is click the support others function. This is where you can view and support the action plans that are happening throughout the organization.",
+    "blocks": [],
+    "metadata": {
+      "start": 819.0,
+      "end": 852.0,
+      "start_str": "13:39",
+      "end_str": "14:12",
+      "video_file": "data/raw/video.mp4"
+    }
+  },
+  {
+    "chunk_id": 27,
+    "source": "video",
+    "source_detail": "timestamp 14:12\u201314:49",
+    "text": " So the first dashboard you see will be overall metrics on what's happening. The one on the far left report downloads by manager.  This is just who's downloaded or not downloaded their report. If you click on the red part of the donut, the table below will populate with the managers who have not yet downloaded their report.  You could select all and then using this toggle, send them a note to download their report.  If I click to the middle table here, I can see who's logged in action plan. And I can of course filter by which dimension they've logged in on the far right. I can see action plan status.",
+    "blocks": [],
+    "metadata": {
+      "start": 852.0,
+      "end": 889.0,
+      "start_str": "14:12",
+      "end_str": "14:49",
+      "video_file": "data/raw/video.mp4"
+    }
+  },
+  {
+    "chunk_id": 28,
+    "source": "video",
+    "source_detail": "timestamp 14:49\u201315:24",
+    "text": " Clicking above for different views of the table. If I select the managers tab, I can see activity of different managers. I can search by manager ID name or managers manager.  And then I can see when they first logged in. If they've downloaded when they've downloaded reports, how many actions they've logged and when they've last logged in.  Of course, all of this is downloadable to Excel with those that far right button.  If I click on action detail, I can see even more. I can see the manager name and then here's where I can see the dimension and item they're working on as well as the action plan they've logged.",
+    "blocks": [],
+    "metadata": {
+      "start": 889.0,
+      "end": 924.0,
+      "start_str": "14:49",
+      "end_str": "15:24",
+      "video_file": "data/raw/video.mp4"
+    }
+  },
+  {
+    "chunk_id": 29,
+    "source": "video",
+    "source_detail": "timestamp 15:24\u201315:55",
+    "text": " Here, if you want to sort and filter by the item folks are working on, you could then, you know, download all the users working on the same thing in order to provide them similar resources or guidance.  Finally, at the top right, we'll move over to the help and guidance tab. Here's where you can retrieve any documents about how to use the tool or any templates that your organization has provided for action planning.  For any technical support, please email survey at org vitality.com. Thank you.",
+    "blocks": [],
+    "metadata": {
+      "start": 924.0,
+      "end": 955.0,
+      "start_str": "15:24",
+      "end_str": "15:55",
+      "video_file": "data/raw/video.mp4"
+    }
+  }
+]
