@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  orgvitality-ai:
+    build: .
+    container_name: orgvitality-ai-app
+    ports:
+      - "8000:8000"
+    volumes:
+      # Mount the local data directory into the container's /app/data directory
+      # This ensures data persistence and allows you to manage it outside the container
+      - ./data:/app/data
+    env_file:
+      # Load environment variables from a .env file
+      - .env
+    restart: unless-stopped

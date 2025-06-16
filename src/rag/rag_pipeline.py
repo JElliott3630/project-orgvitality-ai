@@ -67,7 +67,7 @@ class RagPipeline:
         reranked = [chunk for chunk, score in sorted(scored_chunks, key=lambda x: x[1], reverse=True)[:top_n]]
         return reranked
 
-    def generate_answer(self, user_query, reranked_chunks):
+    def generate_answer(self, user_query, reranked_chunks, stream=False):
         sys_prompt = self.prompts["answer_generation"]["system_prompt"]
 
         def format_chunk_for_context(chunk):
@@ -77,9 +77,9 @@ class RagPipeline:
             if "source_detail" in chunk['metadata'] and chunk['metadata']["source_detail"]:
                 label_parts.append(str(chunk['metadata']["source_detail"]))
             label = ", ".join(label_parts)
-            return f"[{label}]\n{chunk['text']}"
+            return f"[{label}]\\n{chunk['text']}"
 
-        context_block = "\n\n".join([format_chunk_for_context(chunk) for chunk in reranked_chunks])
+        context_block = "\\n\\n".join([format_chunk_for_context(chunk) for chunk in reranked_chunks])
         user_prompt = self.prompts["answer_generation"]["user_prompt_template"].format(
             query_text=user_query,
             context=context_block
@@ -89,14 +89,32 @@ class RagPipeline:
             messages=[
                 {"role": "system", "content": sys_prompt},
                 {"role": "user", "content": user_prompt}
-            ]
+            ],
+            stream=stream
         )
-        answer = response.choices[0].message.content.strip()
-        return answer
+        
+        if stream:
+            return response
+        else:
+            answer = response.choices[0].message.content.strip()
+            return answer
 
     def answer(self, user_query):
         subqueries = self.expand_query(user_query)
         retrieved = self.retrieve(subqueries)
         reranked = self.rerank(user_query, retrieved)
-        answer = self.generate_answer(user_query, reranked)
+        answer = self.generate_answer(user_query, reranked, stream=False)
         return answer
+
+    def answer_stream(self, user_query):
+        """Yields the LLM's response as a stream of chunks."""
+        subqueries = self.expand_query(user_query)
+        retrieved = self.retrieve(subqueries)
+        reranked = self.rerank(user_query, retrieved)
+        
+        stream = self.generate_answer(user_query, reranked, stream=True)
+        
+        for chunk in stream:
+            content = chunk.choices[0].delta.content
+            if content:
+                yield content

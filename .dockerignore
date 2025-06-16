@@ -1,0 +1,18 @@
+# Ignore Docker and git files
+.dockerignore
+Dockerfile
+docker-compose.yml
+.git
+.gitignore
+
+# Ignore Python virtual environment and cache
+.venv
+__pycache__/
+*.pyc
+
+# Ignore the data directory
+# This is mounted as a volume instead of being built into the image
+data/
+
+# Ignore local development files
+.env
