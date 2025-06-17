@@ -1,82 +1,27 @@
 import asyncio
-import httpx
 import os
 from contextlib import asynccontextmanager
-from fastapi import FastAPI, Request, HTTPException, Header, Depends
+from fastapi import FastAPI, Request, HTTPException, Header, Depends, APIRouter
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse
-from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from pydantic import BaseModel
 from dotenv import load_dotenv
 
 # --- Local Imports ---
 from src.rag.vector_store import VectorStore
 from src.rag.rag_pipeline import RagPipeline
-from src.config import SUPABASE_URL, SUPABASE_ANON_KEY
+from src.config import SUPABASE_URL
+from src.auth import get_current_user  # Auth function from src/auth.py
 
-# Load environment variables from .env file
+# Load environment variables
 load_dotenv()
 
-# --- Globals for the application ---
+# --- Globals ---
 rag_pipeline_instance: RagPipeline | None = None
-http_bearer_scheme = HTTPBearer()
 
-# --- Conditional Authentication ---
-# Check an environment variable to see if auth should be enforced.
-# This makes local testing much easier without sacrificing production security.
-AUTH_ENABLED = os.getenv("AUTH_ENABLED", "true").lower() == "true"
-
-async def get_current_user_real(
-    credentials: HTTPAuthorizationCredentials = Depends(http_bearer_scheme),
-) -> dict:
-    """
-    Verifies the Supabase JWT token and returns the user data.
-    This is the REAL authentication check for production.
-    """
-    if not SUPABASE_URL or not SUPABASE_ANON_KEY:
-        raise HTTPException(
-            status_code=500,
-            detail="Supabase URL or Anon Key is not configured on the server.",
-        )
-
-    token = credentials.credentials
-    user_url = f"{SUPABASE_URL}/auth/v1/user"
-    headers = {"apikey": SUPABASE_ANON_KEY, "Authorization": f"Bearer {token}"}
-
-    async with httpx.AsyncClient() as client:
-        try:
-            response = await client.get(user_url, headers=headers)
-            response.raise_for_status()
-        except httpx.HTTPStatusError as e:
-            raise HTTPException(
-                status_code=e.response.status_code,
-                detail="Invalid authentication credentials.",
-            )
-        except httpx.RequestError:
-            raise HTTPException(status_code=503, detail="Service unavailable.")
-
-    return response.json()
-
-async def get_current_user_mock() -> dict:
-    """A mock user for easy local testing when authentication is disabled."""
-    print("--- AUTHENTICATION DISABLED ---")
-    return {"email": "local-test-user@example.com", "id": "mock-user-id"}
-
-# Use a different dependency based on the environment variable
-if AUTH_ENABLED:
-    get_current_user = get_current_user_real
-    print("Authentication is ENABLED.")
-else:
-    get_current_user = get_current_user_mock
-    print("Authentication is DISABLED for local testing.")
-
-
-# --- Application Lifespan (Startup/Shutdown) ---
+# --- Startup/Shutdown Lifespan ---
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    """
-    Handles startup events. Initializes the RAG pipeline.
-    """
     global rag_pipeline_instance
     print("Application startup: Initializing RAG Pipeline...")
     vector_store = VectorStore()
@@ -88,10 +33,10 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(lifespan=lifespan)
 
-# --- Middleware for CORS ---
+# --- CORS Middleware ---
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "http://127.0.0.1:3000"],
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -101,31 +46,49 @@ app.add_middleware(
 class QueryRequest(BaseModel):
     query: str
 
-# --- API Endpoints ---
-@app.post("/answer")
-async def answer(
-    request: QueryRequest,
-    current_user: dict = Depends(get_current_user),
-):
+# --- Protected API Router (requires valid JWT token) ---
+protected_router = APIRouter(
+    prefix="/orgvitality",
+    dependencies=[Depends(get_current_user)],
+)
+
+@protected_router.post("/answer")
+async def answer(request: QueryRequest):
     """Handles a query and returns a single, complete answer."""
     if not rag_pipeline_instance:
-        raise HTTPException(status_code=503, detail="RAG pipeline is not initialized")
-    
-    print(f"Request received from user: {current_user.get('email')}")
+        raise HTTPException(status_code=503, detail="RAG pipeline not initialized.")
     result = await rag_pipeline_instance.answer(request.query)
     return {"answer": result}
 
-
-@app.post("/answer-stream")
-async def answer_stream(
-    request: QueryRequest,
-    current_user: dict = Depends(get_current_user),
-):
+@protected_router.post("/answer-stream")
+async def answer_stream(request: QueryRequest):
     """Handles a query and returns the answer as a stream."""
     if not rag_pipeline_instance:
-        raise HTTPException(status_code=503, detail="RAG pipeline is not initialized")
-    
-    print(f"Streaming request received from user: {current_user.get('email')}")
+        raise HTTPException(status_code=503, detail="RAG pipeline not initialized.")
     stream = rag_pipeline_instance.answer_stream(request.query)
     return StreamingResponse(stream, media_type="text/plain")
 
+@protected_router.post("/test-auth")
+async def test_auth(request: Request):
+    user = await get_current_user(request)
+    return {"user": user}
+
+# --- Public Test Endpoint (uses API key) ---
+@app.post("/test-answer")
+async def test_answer(
+    request: QueryRequest,
+    x_api_key: str = Header(..., alias="X-API-Key")
+):
+    """Test-only endpoint that uses a predefined API key for lightweight auth."""
+    expected_key = os.getenv("API_KEY")
+    if not expected_key:
+        raise HTTPException(status_code=500, detail="API key not set in environment.")
+    if x_api_key != expected_key:
+        raise HTTPException(status_code=401, detail="Invalid API key.")
+    if not rag_pipeline_instance:
+        raise HTTPException(status_code=503, detail="RAG pipeline not initialized.")
+    result = await rag_pipeline_instance.answer(request.query)
+    return {"answer": result}
+
+# --- Mount the protected router ---
+app.include_router(protected_router)

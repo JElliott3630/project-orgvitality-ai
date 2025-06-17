@@ -1,52 +1,31 @@
-# src/auth.py
+from fastapi import Request, HTTPException, status
+import httpx
+from src.config import SUPABASE_URL, SUPABASE_SERVICE_KEY
 
-import os
-from fastapi import Depends, HTTPException, status
-from fastapi.security import OAuth2PasswordBearer
-import jwt
-from dotenv import load_dotenv
-
-# Load environment variables
-load_dotenv()
-
-# Get the Supabase JWT secret from your environment variables
-SUPABASE_JWT_SECRET = os.environ.get("SUPABASE_JWT_SECRET")
-if not SUPABASE_JWT_SECRET:
-    raise Exception("Missing SUPABASE_JWT_SECRET environment variable")
-
-# This will be used to extract the token from the Authorization header
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
-
-async def get_current_user(token: str = Depends(oauth2_scheme)):
+async def get_current_user(request: Request) -> dict:
     """
-    Dependency to get the current user from the JWT.
+    Extracts JWT from the Authorization header and verifies it with Supabase.
+    Returns the user object on success, or raises HTTPException on failure.
     """
-    try:
-        # Decode the JWT
-        payload = jwt.decode(
-            token,
-            SUPABASE_JWT_SECRET,
-            algorithms=["HS256"],
-            audience="authenticated"
+    auth_header = request.headers.get("Authorization")
+
+    if not auth_header or not auth_header.startswith("Bearer "):
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED,
+                            detail="Missing or invalid Authorization header")
+
+    jwt_token = auth_header.removeprefix("Bearer ").strip()
+
+    async with httpx.AsyncClient() as client:
+        response = await client.get(
+            f"{SUPABASE_URL}/auth/v1/user",
+            headers={
+                "Authorization": f"Bearer {jwt_token}",
+                "apikey": SUPABASE_SERVICE_KEY
+            }
         )
-        # The user's ID is in the 'sub' claim
-        user_id = payload.get("sub")
-        if user_id is None:
-            raise HTTPException(
-                status_code=status.HTTP_401_UNAUTHORIZED,
-                detail="Invalid token: no user ID",
-                headers={"WWW-Authenticate": "Bearer"},
-            )
-        return {"id": user_id}
-    except jwt.ExpiredSignatureError:
-        raise HTTPException(
-            status_code=status.HTTP_401_UNAUTHORIZED,
-            detail="Token has expired",
-            headers={"WWW-Authenticate": "Bearer"},
-        )
-    except jwt.InvalidTokenError as e:
-        raise HTTPException(
-            status_code=status.HTTP_401_UNAUTHORIZED,
-            detail=f"Invalid token: {e}",
-            headers={"WWW-Authenticate": "Bearer"},
-        )
+
+        if response.status_code != 200:
+            raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED,
+                                detail="JWT validation failed")
+
+        return response.json()
