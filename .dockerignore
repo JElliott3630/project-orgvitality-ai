@@ -1,17 +1,11 @@
-# Ignore Docker and git files
-.dockerignore
-Dockerfile
-docker-compose.yml
-.git
+data/raw/
+data/processed/
+data/images/clueso_images/
+data/images/pptx/
+*.mp4
+*.pptx
+.git/
 .gitignore
-
-# Ignore Python virtual environment and cache
-.venv
 __pycache__/
 *.pyc
-
-# Ignore the data directory
-# This is mounted as a volume instead of being built into the image
-
-# Ignore local development files
-.env
+.DS_Store

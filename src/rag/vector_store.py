@@ -7,7 +7,9 @@ from src.config import (
     COLLECTION_NAME,
     EMBED_MODEL,
     OPENAI_API_KEY,
-    PROCESSED_JSON
+    PROCESSED_JSON,
+    CHROMA_HOST, # Import CHROMA_HOST
+    CHROMA_PORT # Import CHROMA_PORT
 )
 
 # Set up logging once (at INFO level, minimal)
@@ -19,18 +21,23 @@ logging.basicConfig(
 class VectorStore:
     def __init__(
         self,
-        persist_dir=CHROMA_DIR,
+        # persist_dir=CHROMA_DIR, # Remove or comment out this line as it's not used by HttpClient
         collection_name=COLLECTION_NAME,
         embedding_model=EMBED_MODEL,
-        openai_api_key=OPENAI_API_KEY
+        openai_api_key=OPENAI_API_KEY,
+        chroma_host=CHROMA_HOST, # Accept chroma_host
+        chroma_port=CHROMA_PORT # Accept chroma_port
     ):
-        logging.info("Initializing VectorStore (dir: %s, collection: %s, embed_model: %s)", persist_dir, collection_name, embedding_model)
-        self.persist_dir = persist_dir
+        logging.info("Initializing VectorStore (host: %s:%s, collection: %s, embed_model: %s)", chroma_host, chroma_port, collection_name, embedding_model)
+        # self.persist_dir = persist_dir # This line is no longer needed
         self.collection_name = collection_name
         self.embedding_model = embedding_model
         self.openai_api_key = openai_api_key
+        self.chroma_host = chroma_host
+        self.chroma_port = chroma_port
 
-        self.client = chromadb.PersistentClient(path=self.persist_dir)
+        # Change this line to use HttpClient
+        self.client = chromadb.HttpClient(host=self.chroma_host, port=self.chroma_port)
         self.embedder = embedding_functions.OpenAIEmbeddingFunction(
             api_key=self.openai_api_key,
             model_name=self.embedding_model
@@ -43,7 +50,7 @@ class VectorStore:
     def is_built(self):
         """Returns True if the collection exists and has any documents."""
         return self.collection.count() > 0
-    
+
     def clean_metadata(self, meta):
         return {k: v if v is not None else "" for k, v in meta.items() if v is not None}
 

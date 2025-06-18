@@ -24,6 +24,10 @@ EVAL_DATA_DIR = os.path.join(DATA_DIR, "chatbot_eval_questions")
 COLLECTION_NAME = "orgvitality_chunks"
 EMBED_MODEL = "text-embedding-3-small"
 
+# --- ChromaDB Host (New) ---
+CHROMA_HOST = os.getenv("CHROMA_HOST", "http://localhost") # Default to localhost for local testing
+CHROMA_PORT = os.getenv("CHROMA_PORT", "8000") # Default port for ChromaDB server
+
 # --- Source File Paths ---
 PPTX_INPUT_PATH = os.path.join(RAW_DATA_DIR, "2023 Reporting Portal Trunk- Manager Guide  -  Read-Only .pptx")
 VIDEO_INPUT_PATH = os.path.join(RAW_DATA_DIR, "OrgVitality Reporting Portal Demo.mp4")
