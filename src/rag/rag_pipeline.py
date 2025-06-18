@@ -4,7 +4,9 @@ import yaml
 import logging
 import asyncio
 from sentence_transformers import CrossEncoder
-from src.config import OPENAI_API_KEY, PROMPT_PATH # Using absolute import
+# Ensure this imports your PineconeVectorStore now
+from src.rag.vector_store import PineconeVectorStore # Assuming PineconeVectorStore is in here
+from src.config import OPENAI_API_KEY, PROMPT_PATH, EMBEDDING_MODEL # Added EMBEDDING_MODEL
 
 # --- Setup logging ---
 logging.basicConfig(
@@ -22,23 +24,23 @@ class RagPipeline:
     An asynchronous RAG (Retrieval-Augmented Generation) pipeline
     with lazy loading and a toggle for the reranker.
     """
-    def __init__(self, vector_store, prompts=None, reranker_model="cross-encoder/ms-marco-MiniLM-L-6-v2", use_reranker: bool = False):
+    def __init__(self, vector_store: PineconeVectorStore, prompts=None, reranker_model="cross-encoder/ms-marco-MiniLM-L-6-v2", use_reranker: bool = False):
         self.vector_store = vector_store
         self.prompts = prompts or load_prompts()
         self.async_client = openai.AsyncClient(api_key=OPENAI_API_KEY)
-        
+        self.embedding_model = EMBEDDING_MODEL # Use embedding model from config
+
         # --- MODIFIED ---
         # Added a flag to control reranking and still support lazy loading.
         self.use_reranker = use_reranker
         self.reranker_model_name = reranker_model
-        self.cross_encoder = None 
+        self.cross_encoder = None
         # --- END MODIFIED ---
 
         if self.use_reranker:
             logging.info("Asynchronous RagPipeline initialized (reranker will be loaded on first use).")
         else:
             logging.info("Asynchronous RagPipeline initialized (reranking is DISABLED).")
-
 
     async def _load_reranker(self):
         """Loads the CrossEncoder model on demand."""
@@ -49,14 +51,6 @@ class RagPipeline:
             self.cross_encoder = await asyncio.to_thread(CrossEncoder, self.reranker_model_name)
             logging.info("Reranker model loaded.")
 
-    async def initialize_vector_store(self, rebuild=False):
-        """Asynchronously checks and builds the vector store."""
-        is_built = await asyncio.to_thread(self.vector_store.is_built)
-        if rebuild or not is_built:
-            logging.info("Building or rebuilding the vector store...")
-            await asyncio.to_thread(self.vector_store.build_from_json)
-        else:
-            logging.info("Vector store already built, skipping rebuild.")
 
     async def expand_query(self, user_query: str) -> list[str]:
         # This method remains unchanged
@@ -72,25 +66,51 @@ class RagPipeline:
             return [user_query]
 
     async def retrieve(self, queries: list[str], k: int = 8) -> list[dict]:
-        # This method remains unchanged
+        """
+        Retrieves relevant chunks from the Pinecone vector store.
+        Embeds queries before sending to Pinecone.
+        """
         retrieved_chunks = []
         for q in queries:
-            results = await asyncio.to_thread(self.vector_store.query, q, n_results=k)
-            docs, metadatas = results.get("documents", [[]])[0], results.get("metadatas", [[]])[0]
-            for doc, meta in zip(docs, metadatas):
-                retrieved_chunks.append({"text": doc, "metadata": meta, "query": q})
+            # Generate embedding for the query using OpenAI's embedding API
+            try:
+                embedding_response = await self.async_client.embeddings.create(
+                    input=[q],
+                    model=self.embedding_model
+                )
+                query_embedding = embedding_response.data[0].embedding
+            except openai.APIError as e:
+                logging.error(f"Failed to generate embedding for query '{q}': {e}")
+                continue # Skip this query if embedding fails
+
+            # Call Pinecone's query_vectors method
+            # Use asyncio.to_thread as Pinecone client methods can be blocking
+            pinecone_results = await asyncio.to_thread(
+                self.vector_store.query_vectors,
+                query_embedding=query_embedding,
+                top_k=k
+            )
+
+            # Process results to match the expected format for the rest of the pipeline
+            for chunk_data in pinecone_results:
+                # PineconeVectorStore returns 'page_content' and 'metadata'
+                retrieved_chunks.append({
+                    "text": chunk_data.get("page_content", ""), # Use .get for safety
+                    "metadata": chunk_data.get("metadata", {}),
+                    "query": q # Keep track of the original query that retrieved this chunk
+                })
         return retrieved_chunks
 
     async def rerank(self, user_query: str, retrieved_chunks: list[dict], top_n: int = 6) -> list[dict]:
         """Asynchronously reranks retrieved chunks, loading the model on first use."""
         if not retrieved_chunks:
             return []
-            
+
         await self._load_reranker()
 
         pairs = [(user_query, chunk["text"]) for chunk in retrieved_chunks]
         scores = await asyncio.to_thread(self.cross_encoder.predict, pairs, show_progress_bar=False)
-        
+
         scored_chunks = list(zip(retrieved_chunks, scores))
         reranked = sorted(scored_chunks, key=lambda x: x[1], reverse=True)[:top_n]
         return [chunk for chunk, score in reranked]
@@ -139,7 +159,7 @@ class RagPipeline:
             # If not reranking, just take the first N chunks after deduplication.
             final_chunks = unique_chunks[:TOP_N_FINAL_CHUNKS]
         # --- END MODIFIED ---
-        
+
         return final_chunks
 
     async def answer(self, user_query: str) -> str:

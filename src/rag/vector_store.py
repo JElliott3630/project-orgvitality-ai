@@ -1,115 +1,108 @@
-import chromadb
-from chromadb.utils import embedding_functions
+import os
+from pinecone import Pinecone, ServerlessSpec
+from src import config
 import logging
 
-from src.config import (
-    CHROMA_DIR,
-    COLLECTION_NAME,
-    EMBED_MODEL,
-    OPENAI_API_KEY,
-    PROCESSED_JSON,
-    CHROMA_HOST, # Import CHROMA_HOST
-    CHROMA_PORT # Import CHROMA_PORT
-)
 
-# Set up logging once (at INFO level, minimal)
-logging.basicConfig(
-    level=logging.INFO,
-    format="[%(levelname)s] %(message)s"
-)
+class PineconeVectorStore:
+    """
+    Manages Pinecone index operations including initialization, upserting, and querying.
+    This class centralizes all direct interactions with the Pinecone vector database.
+    """
+    def __init__(self, user_id: str):
+        """
+        Initializes the Pinecone client and connects to or creates a user-specific index.
 
-class VectorStore:
-    def __init__(
-        self,
-        # persist_dir=CHROMA_DIR, # Remove or comment out this line as it's not used by HttpClient
-        collection_name=COLLECTION_NAME,
-        embedding_model=EMBED_MODEL,
-        openai_api_key=OPENAI_API_KEY,
-        chroma_host=CHROMA_HOST, # Accept chroma_host
-        chroma_port=CHROMA_PORT # Accept chroma_port
-    ):
-        logging.info("Initializing VectorStore (host: %s:%s, collection: %s, embed_model: %s)", chroma_host, chroma_port, collection_name, embedding_model)
-        # self.persist_dir = persist_dir # This line is no longer needed
-        self.collection_name = collection_name
-        self.embedding_model = embedding_model
-        self.openai_api_key = openai_api_key
-        self.chroma_host = chroma_host
-        self.chroma_port = chroma_port
+        Args:
+            user_id (str): A unique identifier for the user, used to create a dedicated Pinecone index.
+        """
+        self.user_id = user_id
+        # Index names must be lowercase and cannot contain underscores for Pinecone
+        self.index_name = f"index-{self.user_id}".lower().replace("_", "-")
+        self._pc_client = Pinecone(api_key=config.PINECONE_API_KEY)
+        self._initialize_index()
 
-        # Change this line to use HttpClient
-        self.client = chromadb.HttpClient(host=self.chroma_host, port=self.chroma_port)
-        self.embedder = embedding_functions.OpenAIEmbeddingFunction(
-            api_key=self.openai_api_key,
-            model_name=self.embedding_model
-        )
-        if self.collection_name in [c.name for c in self.client.list_collections()]:
-            self.collection = self.client.get_collection(self.collection_name, embedding_function=self.embedder)
+    def _initialize_index(self):
+        """
+        Checks if the Pinecone index for the current user exists. If not, it creates it.
+        Otherwise, it connects to the existing index.
+        """
+        if self.index_name not in self._pc_client.list_indexes().names():
+            print(f"Creating Pinecone index: {self.index_name}")
+            self._pc_client.create_index(
+                name=self.index_name,
+                dimension=config.EMBEDDING_DIMENSION, # Use dimension from config
+                metric="cosine",
+                spec=ServerlessSpec(
+                    cloud="aws",
+                    region=config.PINECONE_REGION # Use region from config
+                )
+            )
+            print(f"Pinecone index '{self.index_name}' created.")
         else:
-            self.collection = self.client.create_collection(self.collection_name, embedding_function=self.embedder)
+            print(f"Connecting to existing Pinecone index: {self.index_name}")
 
-    def is_built(self):
-        """Returns True if the collection exists and has any documents."""
-        return self.collection.count() > 0
+        self.index = self._pc_client.Index(self.index_name)
+        # It's good practice to print index stats for confirmation
+        print("Pinecone index stats:", self.index.describe_index_stats())
 
-    def clean_metadata(self, meta):
-        return {k: v if v is not None else "" for k, v in meta.items() if v is not None}
+    def upsert_vectors(self, vectors: list[dict]):
+        """
+        Upserts (inserts or updates) a list of vectors into the Pinecone index.
 
-    def build_from_chunks(self, chunks, rebuild=False):
-        if rebuild and self.collection_name in [c.name for c in self.client.list_collections()]:
-            self.client.delete_collection(name=self.collection_name)
-            self.collection = self.client.create_collection(self.collection_name, embedding_function=self.embedder)
-        logging.info("Adding %d chunks to collection...", len(chunks))
+        Args:
+            vectors (list[dict]): A list of dictionaries, where each dict represents a vector
+                                  with 'id', 'values', and 'metadata'.
+        """
+        if not vectors:
+            print("No vectors provided for upsert. Skipping operation.")
+            return
+        
 
-        docs = []
-        ids = []
-        metadatas = []
-        for chunk in chunks:
-            meta = {
-                "source": chunk["source"],
-                "source_detail": chunk["source_detail"],
-                "chunk_id": chunk["chunk_id"],
-            }
-            # Flatten metadata if exists and is a dict
-            if "metadata" in chunk and isinstance(chunk["metadata"], dict):
-                meta.update(chunk["metadata"])
-            meta = self.clean_metadata(meta)
-            docs.append(str(chunk["text"]))    # Make sure it's a string
-            ids.append(f"{chunk['source']}_{chunk['chunk_id']}")
-            metadatas.append(meta)
+        print(f"Upserting {len(vectors)} vectors to Pinecone index '{self.index_name}'...")
+        # Pinecone's upsert can take vectors in batches; consider batching for very large lists
+        self.index.upsert(vectors=vectors)
+        print("✅ Upsert complete.")
 
-        # Filter out any empty docs (to avoid OpenAI error)
-        filtered = [
-            (d, i, m) for d, i, m in zip(docs, ids, metadatas)
-            if d.strip()
-        ]
-        if not filtered:
-            raise ValueError("No valid (non-empty) docs to index.")
+    def query_vectors(self, query_embedding: list[float], top_k: int, metadata_filter: dict = None) -> list[dict]:
+        """
+        Queries the Pinecone index with a given embedding and retrieves the top_k most similar vectors.
 
-        docs, ids, metadatas = zip(*filtered)
+        Args:
+            query_embedding (list[float]): The embedding of the query.
+            top_k (int): The number of top relevant vectors to retrieve.
+            metadata_filter (dict, optional): A dictionary for metadata filtering. Defaults to None.
 
-        self.collection.add(
-            documents=list(docs),
-            metadatas=list(metadatas),
-            ids=list(ids)
+        Returns:
+            list[dict]: A list of dictionaries, each representing a retrieved chunk
+                        with its content and metadata.
+        """
+        if not query_embedding:
+            print("Query embedding is empty. Cannot perform query.")
+            return []
+
+        print(f"Querying Pinecone index '{self.index_name}' with top_k={top_k}...")
+        query_response = self.index.query(
+            vector=query_embedding,
+            top_k=top_k,
+            include_metadata=True, # Crucial to retrieve the stored text and other metadata
+            filter=metadata_filter # Apply metadata filters if provided
         )
 
+        retrieved_chunks = []
+        for match in query_response.matches:
+            # Ensure 'text' and 'source' are present in metadata for robust retrieval
+            page_content = match.metadata.get("text", "")
+            source = match.metadata.get("source", "N/A")
+            page = match.metadata.get("page", "N/A") # Assuming page number is also stored
 
-    def build_from_json(self, json_path=PROCESSED_JSON, rebuild=True):
-        import json
-        with open(json_path) as f:
-            chunks = json.load(f)
-        self.build_from_chunks(chunks, rebuild=rebuild)
+            retrieved_chunks.append({
+                "page_content": page_content,
+                "metadata": {
+                    "source": source,
+                    "page": page
+                }
+            })
+        print(f"Retrieved {len(retrieved_chunks)} chunks from Pinecone.")
+        return retrieved_chunks
 
-    def query(self, text, n_results=5):
-        return self.collection.query(
-            query_texts=[text],
-            n_results=n_results
-        )
-
-    def count(self):
-        cnt = self.collection.count()
-        return cnt
-
-    def reset(self):
-        self.client.delete_collection(self.collection_name)
-        self.collection = self.client.create_collection(self.collection_name, embedding_function=self.embedder)

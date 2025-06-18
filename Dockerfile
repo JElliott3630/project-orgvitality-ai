@@ -1,38 +1,32 @@
 # Use an official Python runtime as a parent image
-FROM python:3.11-slim 
+FROM python:3.11-slim
 
 # Set the working directory in the container
 WORKDIR /app
 
-# Install system dependencies required by playwright and tesseract
-# Install other necessary packages like build-base, tesseract-ocr
-RUN apt-get update && apt-get install -y \
-    tesseract-ocr \
-    tesseract-ocr-eng \
-    libgl1-mesa-glx \
-    libgomp1 \
-    build-essential \
-    curl \
-    gnupg \
+# Install only essential system dependencies
+# Removed: tesseract-ocr, tesseract-ocr-eng, libgl1-mesa-glx, libgomp1, build-essential, curl, gnupg
+# These were primarily for Playwright, Tesseract, or general build tools not always needed at runtime.
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    # Add any *truly essential* system packages here if your remaining Python libs require them.
+    # For a typical FastAPI app with pure Python dependencies, often very few are needed beyond base 'slim' image.
+    # Example for some database drivers: libpq-dev for psycopg2-binary (PostgreSQL)
+    # Example for image processing if you still use Pillow: libjpeg-dev zlib1g-dev
+    # For now, we'll keep it minimal.
     && rm -rf /var/lib/apt/lists/*
 
-# Copy the requirements file into the container at /app
+# Copy the updated requirements file into the container at /app
+# This assumes you have already removed 'playwright', 'openai-whisper', 'pytesseract', 'python-pptx', 'lxml'
 COPY requirements.txt .
 
-# Install any needed packages specified in requirements.txt
-# This step will install the 'playwright' Python package, making the 'playwright' command available.
+# Install any needed packages specified in the now smaller requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
-
-# Install Playwright browsers (chromium) and their dependencies if you use playwright for web scraping
-# This command must run AFTER playwright Python package is installed via pip
-ENV PLAYWRIGHT_BROWSERS_PATH=/ms-playwright
-RUN playwright install --with-deps chromium
 
 # Copy the rest of your application code
 COPY . .
 
-# Ensure the data directory exists and has appropriate permissions (for processed JSON if needed)
-# ChromaDB will store its data on the remote GCE server, but your app might need this for input JSON.
+# Ensure the data directory exists and has appropriate permissions (for processed JSON, as requested)
+# This step is crucial if your app reads from /app/data during runtime.
 RUN mkdir -p /app/data && chmod -R 777 /app/data
 
 # Expose the port the app runs on

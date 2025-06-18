@@ -6,6 +6,10 @@ load_dotenv(override=True)
 
 # --- API Keys ---
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+PINECONE_API_KEY = os.getenv("PINECONE_API_KEY")
+EMBEDDING_DIMENSION = 1536
+DEFAULT_PINECONE_USER_ID = "orgvitality-default"
+PINECONE_REGION = "us-east-1"
 
 # Supabase
 SUPABASE_URL = os.getenv("NEXT_PUBLIC_SUPABASE_URL")
@@ -22,7 +26,7 @@ PROCESSED_DATA_DIR = os.path.join(DATA_DIR, "processed")
 CHROMA_DIR = os.path.join(DATA_DIR, "chromadb")
 EVAL_DATA_DIR = os.path.join(DATA_DIR, "chatbot_eval_questions")
 COLLECTION_NAME = "orgvitality_chunks"
-EMBED_MODEL = "text-embedding-3-small"
+EMBEDDING_MODEL = "text-embedding-3-small"
 
 # --- ChromaDB Host (New) ---
 CHROMA_HOST = os.getenv("CHROMA_HOST", "http://localhost") # Default to localhost for local testing

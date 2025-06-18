@@ -8,10 +8,10 @@ from pydantic import BaseModel
 from dotenv import load_dotenv
 
 # --- Local Imports ---
-from src.rag.vector_store import VectorStore
 from src.rag.rag_pipeline import RagPipeline
+from src.rag.vector_store import PineconeVectorStore  # Adjust if location differs
 from src.config import SUPABASE_URL
-from src.auth import get_current_user  # Auth function from src/auth.py
+from src.auth import get_current_user
 
 # Load environment variables
 load_dotenv()
@@ -24,12 +24,11 @@ rag_pipeline_instance: RagPipeline | None = None
 async def lifespan(app: FastAPI):
     global rag_pipeline_instance
     print("Application startup: Initializing RAG Pipeline...")
-    vector_store = VectorStore()
+    vector_store = PineconeVectorStore(user_id="orgvitality-default")
     rag_pipeline_instance = RagPipeline(vector_store=vector_store, use_reranker=False)
-    asyncio.create_task(rag_pipeline_instance.initialize_vector_store())
+    print("[INFO] Asynchronous RagPipeline initialized (reranking is DISABLED).")
     yield
     print("Application shutdown.")
-
 
 app = FastAPI(lifespan=lifespan)
 
@@ -54,7 +53,6 @@ protected_router = APIRouter(
 
 @protected_router.post("/answer")
 async def answer(request: QueryRequest):
-    """Handles a query and returns a single, complete answer."""
     if not rag_pipeline_instance:
         raise HTTPException(status_code=503, detail="RAG pipeline not initialized.")
     result = await rag_pipeline_instance.answer(request.query)
@@ -62,7 +60,6 @@ async def answer(request: QueryRequest):
 
 @protected_router.post("/answer-stream")
 async def answer_stream(request: QueryRequest):
-    """Handles a query and returns the answer as a stream."""
     if not rag_pipeline_instance:
         raise HTTPException(status_code=503, detail="RAG pipeline not initialized.")
     stream = rag_pipeline_instance.answer_stream(request.query)
@@ -79,7 +76,6 @@ async def test_answer(
     request: QueryRequest,
     x_api_key: str = Header(..., alias="X-API-Key")
 ):
-    """Test-only endpoint that uses a predefined API key for lightweight auth."""
     expected_key = os.getenv("API_KEY")
     if not expected_key:
         raise HTTPException(status_code=500, detail="API key not set in environment.")
