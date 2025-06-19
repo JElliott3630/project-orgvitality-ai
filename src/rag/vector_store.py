@@ -18,7 +18,8 @@ class PineconeVectorStore:
         """
         self.user_id = user_id
         # Index names must be lowercase and cannot contain underscores for Pinecone
-        self.index_name = f"index-{self.user_id}".lower().replace("_", "-")
+        # self.index_name = f"index-{self.user_id}".lower().replace("_", "-")
+        self.index_name = "index-orgvitality-default"
         self._pc_client = Pinecone(api_key=config.PINECONE_API_KEY)
         self._initialize_index()
 
@@ -105,4 +106,3 @@ class PineconeVectorStore:
             })
         print(f"Retrieved {len(retrieved_chunks)} chunks from Pinecone.")
         return retrieved_chunks
-
