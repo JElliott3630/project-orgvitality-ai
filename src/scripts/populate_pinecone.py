@@ -1,7 +1,7 @@
 import json
 import asyncio
 import logging
-import openai
+from langfuse.openai import openai
 from src.config import (
     PINECONE_API_KEY, PINECONE_REGION, EMBEDDING_DIMENSION,
     OPENAI_API_KEY, DEFAULT_PINECONE_USER_ID, EMBEDDING_MODEL # Added EMBEDDING_MODEL to import

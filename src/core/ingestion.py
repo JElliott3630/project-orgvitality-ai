@@ -1,16 +1,4 @@
 from __future__ import annotations
-"""DocumentIngestor – single-responsibility class
---------------------------------------------------
-• Supports .pdf, .docx, .xlsx, .pptx (easily extensible)
-• Converts each file to markdown-ish plain‑text "pages"
-• Splits pages into token windows (750 tokens, 150 overlap)
-• Returns a DocumentBatch dataclass ready for embedding / storage
-
-Public API
-~~~~~~~~~~
-    ingest(file_bytes: bytes, file_name: str)  -> DocumentBatch
-    ingest_path(path: str | Path)             -> DocumentBatch
-"""
 
 import unicodedata
 import uuid

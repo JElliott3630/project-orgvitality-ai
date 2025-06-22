@@ -1,4 +1,4 @@
-import openai
+from langfuse.openai import openai
 import json
 import yaml
 import logging

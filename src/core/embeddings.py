@@ -1,5 +1,5 @@
 import os
-import openai
+from langfuse.openai import openai
 import backoff   # make sure already installed
 
 class OpenAIEmbedding:
